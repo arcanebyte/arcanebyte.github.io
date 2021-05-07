@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Apple Desktop Bus (ADB) to Apple Lisa Keyboard Adapter
-category: adb2lisa
+category:
+    columns: 4
 ---
 
 ### Description

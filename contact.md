@@ -1,7 +1,11 @@
 ---
 layout: contact
-title: Got Any Questions
+title: Contact Us
 permalink: /contact/
 ---
 
-For any questions regarding product availability or support, please reach out to us via email at [support@arcanebyte.com](mailto:support@arcanebyte.com).
+![logo](/assets/posts/my_logo.jpg)
+
+Thanks for your interest in ArcaneByte!
+
+For any questions regarding product availability or support, please reach out to us via email at the address below:

@@ -1,0 +1,23 @@
+# Categories home page navigation
+
+- heading: Where to Purchase
+  categories:
+    - title: eBay
+      desc: Visit our eBay store for purchase options
+      icon: ebay
+      url: "https://www.ebay.com/sch/arcanebyte/"
+
+    - title: Tindie
+      desc: Visit our Tindie store for purchase options
+      icon: tindie
+      url: "https://www.tindie.com/stores/arcanebyte/"
+
+    - title: Etsy
+      desc: Visit our Etsy store for purchase options
+      icon: etsy
+      url: "https://www.etsy.com/shop/ArcaneByte"
+
+    - title: Direct
+      desc: Reach out directly for purchase options
+      icon: cog
+      url: "/contact/"

@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{% if page.category.columns %}
+    {% assign columns = page.category.columns %}
+{% else %}
+    {% assign columns = 2 %}
+{% endif %}
+
 <div class="uk-section">
     <div class="uk-container uk-container-small">
         <article class="uk-article">
@@ -22,17 +28,8 @@ layout: default
                 {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
                 {{ page.date | date: date_format }}
               </time>
-              {% if page.author %}
-                {% assign author = page.author %}
-              {% else %}
-                {% assign author = site.author.name %}
-              {% endif %}
-              by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ author }}</span></span>
             </p>
 
-            {% include related.html %}
-
-            {% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}
         </article>
 
         <script>
@@ -43,5 +40,35 @@ layout: default
             });
         </script>
 
+    </div>
+</div>
+
+<div class="uk-section uk-section-large uk-background-muted">
+    <div class="uk-container">
+        {% for section in site.data.navigation_purchase %}
+            {% if section.heading %}
+                <h2 class="uk-text-center section-title section-title-primary">{{ section.heading }}</h2>
+            {% endif %}
+
+            <div class="uk-child-width-1-{{ columns }}@m uk-grid-match uk-text-center" data-uk-grid>
+            {% for category in section.categories %}
+                {% if category.title %}
+                {% assign posts = category | last %}
+                <div>
+                    <div id="{{ category.title | slugify }}-card" class="uk-card uk-card-default uk-card-hover uk-border-rounded uk-card-body uk-inline card-category">
+                        <a class="uk-position-cover" href="#{{ category.title | slugify }}-container" data-uk-scroll="duration: 400; offset: 35;" onclick="{% if category.url %}location.href='{{ category.url }}';{% else %}filter('{{ category.title | slugify }}');{% endif %}"></a>
+                        {% if category.icon %}
+                        <span data-uk-icon="icon: {{ category.icon }}; ratio: 2" class=""></span>
+                        {% endif %}
+                        <h3 class="uk-card-title uk-margin">{{ category.title }}</h3>
+                        {% if category.desc %}
+                        <p>{{ category.desc }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 </div>

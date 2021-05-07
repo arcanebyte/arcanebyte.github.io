@@ -10,14 +10,17 @@
     - title: mac2lisa
       desc: Converts Macintosh 128k/512k/Plus Keyboards to the Apple Lisa and Macintosh
       icon: keyboard
+      url: "/mac2lisa-product/"
       
     - title: usb2lisa
       desc: Converts Universal Serial Bus (USB) Keyboards to the Apple Lisa and Macintosh
       icon: keyboard
+      url: "/usb2lisa-product/"
       
     - title: WiFiModem
       desc: ESP8266-based wireless (wifi) modem for vintage computers
       icon: modem
+      url: "/wifimodem-product/"
       
     - title: Apple Parallel Hard Drive Emulator
       desc: A parallel hard drive emulator based on cameo/aphid
@@ -28,15 +31,19 @@
     - title: eBay
       desc: Visit our eBay store for purchase options
       icon: ebay
+      url: "https://www.ebay.com/sch/arcanebyte/"
 
     - title: Tindie
       desc: Visit our Tindie store for purchase options
       icon: tindie
+      url: "https://www.tindie.com/stores/arcanebyte/"
 
     - title: Etsy
       desc: Visit our Etsy store for purchase options
       icon: etsy
+      url: "https://www.etsy.com/shop/ArcaneByte"
 
     - title: Direct
       desc: Reach out directly for purchase options
       icon: cog
+      url: "/contact/"
