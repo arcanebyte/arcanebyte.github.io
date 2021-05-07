@@ -84,8 +84,6 @@ function showContainer(id) {
 <div class="uk-section uk-section-large uk-section-default">
     <div class="uk-container uk-container-small">
 
-        <div class="uk-article-content">{{ content }}</div>
-
         <div id="category-section" class="uk-margin-large-top hidden">
             <hr>
             {% for category in site.categories %}
@@ -106,17 +104,3 @@ function showContainer(id) {
 
     </div>
 </div>
-
-
-{% if page.cta %}
-<div  class="uk-container uk-container-small"><hr></div>
-<div class="uk-section-large uk-text-center">
-    <div class="uk-container uk-container-small">
-        <div data-uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: true">
-            <h2 class="section-title-primary">{{ page.cta.title }}</h2>
-            {% if page.cta.subtitle %}<p class="subtitle uk-text-lead uk-text-center">{{ page.cta.subtitle | escape }}</p>{% endif %}
-            <a class="uk-button uk-button-primary uk-button-large uk-border-rounded uk-margin-small-top" href="{{ domain }}{{ page.cta.button_url }}">{{ page.cta.button_text }}</a>
-        </div>
-    </div>
-</div>
-{% endif %}

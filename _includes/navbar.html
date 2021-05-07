@@ -2,21 +2,6 @@
     <div data-uk-navbar>
         <div class="uk-navbar-left">
 
-          <a class="uk-navbar-item uk-logo" href="{{ "/" | relative_url }}">
-
-            {% if site.logo_image.light or site.logo_image.dark %}
-              {% if site.logo_image.light %}
-                <img class="uk-logo-inverse" src="{{ site.post_assets | absolute_url }}{{ site.logo_image.light }}" alt="{{ site.title }}">
-              {% endif %}
-              {% if site.logo_image.dark %}
-                <img src="{{ site.post_assets | absolute_url }}{{ site.logo_image.dark }}" alt="{{ site.title }}">
-              {% endif %}
-            {% else %}
-              {{ site.title }}
-            {% endif %}
-
-          </a>
-
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav uk-visible@m">
