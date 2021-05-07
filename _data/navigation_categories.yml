@@ -1,0 +1,41 @@
+# Categories home page navigation
+
+- heading: Products
+  categories:
+    - title: adb2lisa
+      desc: Converts Apple Desktop Bus (ADB) Keyboards to the Apple Lisa and Macintosh XL
+      icon: keyboard
+
+    - title: mac2lisa
+      desc: Converts Macintosh 128k/512k/Plus Keyboards to the Apple Lisa and Macintosh
+      icon: keyboard
+      
+    - title: usb2lisa
+      desc: Converts Universal Serial Bus (USB) Keyboards to the Apple Lisa and Macintosh
+      icon: keyboard
+      
+    - title: WiFiModem
+      desc: ESP8266-based wireless (wifi) modem for vintage computers
+      icon: modem
+      
+    - title: Apple Parallel Hard Drive Emulator
+      desc: A parallel hard drive emulator based on cameo/aphid
+      icon: disk
+
+- heading: Where to Purchase
+  categories:
+    - title: eBay
+      desc: Visit our eBay store for purchase options
+      icon: ebay
+
+    - title: Tindie
+      desc: Visit our Tindie store for purchase options
+      icon: tindie
+
+    - title: Etsy
+      desc: Visit our Etsy store for purchase options
+      icon: etsy
+
+    - title: Direct
+      desc: Reach out directly for purchase options
+      icon: cog
