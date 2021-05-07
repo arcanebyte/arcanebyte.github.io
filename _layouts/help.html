@@ -64,7 +64,7 @@ function showContainer(id) {
                 {% assign posts = category | last %}
                 <div>
                     <div id="{{ category.title | slugify }}-card" class="uk-card uk-card-default uk-card-hover uk-border-rounded uk-card-body uk-inline card-category">
-                        <a class="uk-position-cover" href="#{{ category.title | slugify }}-container" data-uk-scroll="duration: 400; offset: 35;" onclick="filter('{{ category.title | slugify }}');"></a>
+                        <a class="uk-position-cover" href="#{{ category.title | slugify }}-container" data-uk-scroll="duration: 400; offset: 35;" onclick="{% if category.url %}location.href='{{ category.url }}';{% else %}filter('{{ category.title | slugify }}');{% endif %}"></a>
                         {% if category.icon %}
                         <span data-uk-icon="icon: {{ category.icon }}; ratio: 2" class=""></span>
                         {% endif %}

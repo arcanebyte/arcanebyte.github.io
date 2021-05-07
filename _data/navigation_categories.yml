@@ -5,6 +5,7 @@
     - title: adb2lisa
       desc: Converts Apple Desktop Bus (ADB) Keyboards to the Apple Lisa and Macintosh XL
       icon: keyboard
+      url: "/adb2lisa-product/"
 
     - title: mac2lisa
       desc: Converts Macintosh 128k/512k/Plus Keyboards to the Apple Lisa and Macintosh
