@@ -25,3 +25,4 @@
     - title: Apple Parallel Hard Drive Emulator
       desc: A parallel hard drive emulator based on cameo/aphid
       icon: disk
+      url: "/harddrive-product/"

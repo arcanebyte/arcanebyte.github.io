@@ -1,27 +1,34 @@
 ---
 layout: post
-title: RS232 WiFi Wireless Modem for Vintage Computers
+title: Parallel Hard Drive Emulator for Apple Lisa and Apple ///
 category:
     columns: 4
 ---
 
 ### Description
 
-Retro is cosmo! The ArcaneByte RS232 WiFiModem is a Hayes-compatible wifi modem for vintage computers with an RS232 serial port that can be used to connect to Internet-based resources.
+The **Apple Parallel Port Hard Drive Emulator** faithfully emulates the [Apple ProFile](https://en.wikipedia.org/wiki/Apple_ProFile) series of hard disk drives introduced in 1981 for the Apple /// Computer and later the Apple Lisa and Macintosh XL. With little effort, one can install Lisa Office System, MacWorks, SOS, and other operating systems for the Apple Lisa, Macintosh XL, and Apple ///.
 
-Now you can connect to your favorite BBS using an IP address rather than a phone number. Or, you can transfer files using zmodem or Kermit @ 1200 baud for that true vintage experience. If you want to host a BBS, enable the TCP/IP listener function to ‘dial in’ to your retro machine. The possibilities really are endless!
+Tom Stepleton, who designed the Cameo/Aphid cape for the PocketBeagle and the associated software, has graciously donated his efforts to the public domain - so feel free to build one yourself! Information about the Cameo, Aphid, and Selector can be found at the following links:
 
-The ArcaneByte WiFiModem is a hand-built device and uses modified Zimodem firmware by Bo Zimmerman (available on Github). With the Arduino IDE you are free to install any firmware you see fit. The device is powered by a MicroUSB cable and requires 5V to operate. Connect the WiFiModem directly to your DB25 serial port, or use a straight-through extension cable and/or DB9 adapter and/or gender changer, if necessary. Supports common baud rates (300, 1200, 2400, 4800, 9600, 19200+).
+Cameo: [https://github.com/stepleton/cameo](https://github.com/stepleton/cameo)
+Aphid: [https://github.com/stepleton/cameo/tree/master/aphid](https://github.com/stepleton/cameo)
+Selector: [https://github.com/stepleton/cameo/tree/master/aphid/selector](https://github.com/stepleton/cameo)
 
-### Purchase Options
+The emulator is a Linux-based system that works by presenting a disk image file as an Apple ProFile hard drive to the connected system. It supports 5MB and 10MB "ProFile" disk sizes, as well as ardbitrary sizes for operating systems that support it (MacWorks).
 
-For your convenience, you can purchase directly from our site. Please note there are two variants of this product. Choose 'male' or 'female' connector at checkout.
+The **Apple Parallel Port Hard Drive Emulator** has been made available for sale by ArcaneByte with limited support. There are two variants of this product. Choose 'Rev A' or 'Rev B' at checkout.
+
+- Revision A: Supports Apple Lisa 2/5 and Apple ///
+- Revision B: Supports Apple Lisa 2/5, Apple Lisa 2/10, and Apple ///
+
+At this time, all **Apple Parallel Port Hard Drive Emulator** devices sold by ArcaneByte are sold as a completed kit that include the emulator, adapter board, SD card with pre-installed disk images (Lisa Only), and a MicroUSB power cable. For Lisa 2/10 systems, a Widget adapter is recommended (sold seperately).
 
 <div id="smart-button-container">
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
-          <p>ArcaneByte RS232 WiFi Modem</p>
-          <select id="item-options"><option value="Male (DB25)" price="49.95">Male (DB25) - 49.95 USD</option><option value="Female (DB25)" price="49.95">Female (DB25) - 49.95 USD</option></select>
+          <p>Apple Parallel Hard Drive Emulator</p>
+          <select id="item-options"><option value="Revision A" price="119.95">Revision A Kit - 119.95 USD</option><option value="Revision B" price="149.95">Revision B Kit cancel.md- 149.95 USD</option><option value="Widget Adapter Cable" price="12.95">Widget Adapter Cable - 12.95 USD</option></select>
           <select style="visibility: hidden" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
         </div>
       <div id="paypal-button-container"></div>
@@ -30,14 +37,14 @@ For your convenience, you can purchase directly from our site. Please note there
 <script src="https://www.paypal.com/sdk/js?client-id=AWLPOcvu-HQoswvT8u4kEd2eJoeNfIrv1Qn75bweyuse9A-UM35n6hhVfbbrEmHuruRLo-68ixbkCDPM&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 <script>
       function initPayPalButton() {
-        var shipping = 4.95;
+        var shipping = 5.95;
         var itemOptions = document.querySelector("#smart-button-container #item-options");
     var quantity = parseInt(5);
     var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
     if (!isNaN(quantity)) {
       quantitySelect.style.visibility = "visible";
     }
-    var orderDescription = 'ArcaneByte RS232 WiFi Modem';
+    var orderDescription = 'Apple Parallel Hard Drive Emulator';
     if(orderDescription === '') {
       orderDescription = 'Item';
     }
@@ -119,17 +126,5 @@ For your convenience, you can purchase directly from our site. Please note there
   }
   initPayPalButton();
 </script>
-
-### Action Shots
-
+    
 {% include image.html img="wifimodem/wifimodem1.jpg" lightbox="true" alt="wifimodem" caption="wifimodem comes in male or female version" width="400" class="center" %}
-{% include image.html img="wifimodem/wifimodem2.jpg" lightbox="true" alt="wifimodem" caption="wifimodem with a female connector" width="400" %}
-{% include image.html img="wifimodem/wifimodem3.jpg" lightbox="true" alt="wifimodem" caption="wifimodem with a male connector" width="400" %}
-{% include image.html img="wifimodem/wifimodem4.jpg" lightbox="true" alt="wifimodem" caption="wifimodem powered by microusb" width="400" %}
-{% include image.html img="wifimodem/wifimodem5.jpg" lightbox="true" alt="wifimodem" caption="wifimodem connected to a Macintosh SE" width="400" %}
-{% include image.html img="wifimodem/wifimodem6.jpg" lightbox="true" alt="wifimodem" caption="wifimodem connected to a Powerbook G3" width="400" %}
-{% include image.html img="wifimodem/wifimodem7.jpg" lightbox="true" alt="wifimodem" caption="wifimodem connects to local wireless networks" width="400" %}
-{% include image.html img="wifimodem/wifimodem8.jpg" lightbox="true" alt="wifimodem" caption="wifimodem connected to an Apple Lisa running UNIX" width="400" %}
-{% include image.html img="wifimodem/wifimodem9.jpg" lightbox="true" alt="wifimodem" caption="wifimodem facilitating a zmodem transfer" width="400" %}
-
-
