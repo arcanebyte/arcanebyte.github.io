@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parallel Hard Drive Emulator for Apple Lisa and Apple ///
+title: Hard Drive Emulator for Apple Lisa and Apple ///
 category:
     columns: 4
 ---
@@ -11,9 +11,9 @@ The **Apple Parallel Port Hard Drive Emulator** faithfully emulates the [Apple P
 
 Tom Stepleton, who designed the Cameo/Aphid cape for the PocketBeagle and the associated software, has graciously donated his efforts to the public domain - so feel free to build one yourself! Information about the Cameo, Aphid, and Selector can be found at the following links:
 
-Cameo: [https://github.com/stepleton/cameo](https://github.com/stepleton/cameo)
-Aphid: [https://github.com/stepleton/cameo/tree/master/aphid](https://github.com/stepleton/cameo)
-Selector: [https://github.com/stepleton/cameo/tree/master/aphid/selector](https://github.com/stepleton/cameo)
+- Cameo: [https://github.com/stepleton/cameo](https://github.com/stepleton/cameo)
+- Aphid: [https://github.com/stepleton/cameo/tree/master/aphid](https://github.com/stepleton/cameo)
+- Selector: [https://github.com/stepleton/cameo/tree/master/aphid/selector](https://github.com/stepleton/cameo)
 
 The emulator is a Linux-based system that works by presenting a disk image file as an Apple ProFile hard drive to the connected system. It supports 5MB and 10MB "ProFile" disk sizes, as well as ardbitrary sizes for operating systems that support it (MacWorks).
 
@@ -28,7 +28,7 @@ At this time, all **Apple Parallel Port Hard Drive Emulator** devices sold by Ar
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
           <p>Apple Parallel Hard Drive Emulator</p>
-          <select id="item-options"><option value="Revision A" price="119.95">Revision A Kit - 119.95 USD</option><option value="Revision B" price="149.95">Revision B Kit cancel.md- 149.95 USD</option><option value="Widget Adapter Cable" price="12.95">Widget Adapter Cable - 12.95 USD</option></select>
+          <select id="item-options"><option value="Revision A" price="119.95">Revision A Kit - 119.95 USD</option><option value="Revision B" price="139.95">Revision B Kit - 139.95 USD</option><option value="Widget Adapter Cable" price="149.95">Revision B Kit w/ Widget Adapter Cable - 149.95 USD</option></select>
           <select style="visibility: hidden" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
         </div>
       <div id="paypal-button-container"></div>
@@ -127,4 +127,8 @@ At this time, all **Apple Parallel Port Hard Drive Emulator** devices sold by Ar
   initPayPalButton();
 </script>
     
-{% include image.html img="wifimodem/wifimodem1.jpg" lightbox="true" alt="wifimodem" caption="wifimodem comes in male or female version" width="400" class="center" %}
+{% include image.html img="harddrive/harddrive1.jpg" lightbox="true" alt="harddrive" caption="The Apple Parallel Hard Drive Emulator comes in two versions that support the Apple Lisa and Apple ///" width="400" class="center" %}
+{% include image.html img="harddrive/harddrive2.jpg" lightbox="true" alt="harddrive" caption="The emulator connects straight to DB25 parallel port on the machine. Pin 7 is removed for compatibility." width="400" class="center" %}
+{% include image.html img="harddrive/harddrive3.jpg" lightbox="true" alt="harddrive" caption="Rev A supports the Apple Lisa 2/5 and Apple ///" width="400" class="center" %}
+{% include image.html img="harddrive/harddrive4.jpg" lightbox="true" alt="harddrive" caption="Rev B supports Apple Lisa 2/5, 2/10 (w/ adapter) and Apple ///" width="400" class="center" %}
+{% include image.html img="harddrive/harddrive5.jpg" lightbox="true" alt="harddrive" caption="The Selector OS for Lisa provides a boot menu for booting from a variety of operating systems on the included SD card" width="400" class="center" %}
