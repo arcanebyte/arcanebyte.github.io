@@ -1,7 +1,7 @@
- cancel.md ---
+---
 layout: page
 title: Sorry To See You Go
-permalink: /cancel.html
+permalink: /cancel
 ---
 
 ## Your order has been canceled. 
