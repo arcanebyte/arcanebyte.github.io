@@ -22,6 +22,10 @@ The **Apple Parallel Port Hard Drive Emulator** has been made available for sale
 - Revision A: Supports Apple Lisa 2/5 and Apple ///
 - Revision B: Supports Apple Lisa 2/5, Apple Lisa 2/10, and Apple ///
 
+### Purchase Options
+
+For your convenience, you can purchase directly from our site. Please note there are multiple variants of this product. 
+
 At this time, all **Apple Parallel Port Hard Drive Emulator** devices sold by ArcaneByte are sold as a completed kit that include the emulator, adapter board, SD card with pre-installed disk images (Lisa Only), and a MicroUSB power cable. For Lisa 2/10 systems, a Widget adapter is recommended (sold seperately).
 
 <div id="smart-button-container">
@@ -126,6 +130,8 @@ At this time, all **Apple Parallel Port Hard Drive Emulator** devices sold by Ar
   }
   initPayPalButton();
 </script>
+
+### Action Shots
     
 {% include image.html img="harddrive/harddrive1.jpg" lightbox="true" alt="harddrive" caption="The Apple Parallel Hard Drive Emulator comes in two versions that support the Apple Lisa and Apple ///" width="400" class="center" %}
 {% include image.html img="harddrive/harddrive2.jpg" lightbox="true" alt="harddrive" caption="The emulator connects straight to DB25 parallel port on the machine. Pin 7 is removed for compatibility." width="400" class="center" %}
