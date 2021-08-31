@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Thanks For Your Order!
-permalink: /success.html
+permalink: /success
 ---
 
 ## Please allow up to two days for your order to ship. 
