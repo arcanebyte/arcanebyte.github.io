@@ -22,6 +22,8 @@ The **Apple Parallel Port Hard Drive Emulator** has been made available for sale
 - Revision A: Supports Apple Lisa 2/5 and Apple ///
 - Revision B: Supports Apple Lisa 2/5, Apple Lisa 2/10, and Apple ///
 
+Both Rev A and Rev B designs have been made available for [https://github.com/arcanebyte/cameo/tree/prod/hardware/arcanebyte_aphde](download) in EAGLE format should you choose to build one yourself.
+
 ### Purchase Options
 
 For your convenience, you can purchase directly from our site. Please note there are multiple variants of this product. 
