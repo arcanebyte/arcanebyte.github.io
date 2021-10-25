@@ -35,9 +35,9 @@ At this time, all **Apple Parallel Port Hard Drive Emulator** devices sold by Ar
 <input type="hidden" name="hosted_button_id" value="VGBNZ7BSUQW7C">
 <table>
 <tr><td><input type="hidden" name="on0" value="Choose a Revision">Choose a Revision</td></tr><tr><td><select name="os0">
-    <option value="Rev A (Lisa 2/5, Apple ///)">Rev A (Lisa 2/5, Apple ///) $119.95 USD</option>
-    <option value="Rev B (Lisa 2/5, Lisa 2/10, Apple ///)">Rev B (Lisa 2/5, Lisa 2/10, Apple ///) $119.95 USD</option>
-    <option value="Rev B w/ Widget Adapter">Rev B w/ Widget Adapter $129.95 USD</option>
+	<option value="Rev A (Lisa 2/5, Apple ///)">Rev A (Lisa 2/5, Apple ///) $119.95 USD</option>
+	<option value="Rev B (Lisa 2/5, Lisa 2/10, Apple ///)">Rev B (Lisa 2/5, Lisa 2/10, Apple ///) $129.95 USD</option>
+	<option value="Rev B w/ Widget Adapter">Rev B w/ Widget Adapter $139.95 USD</option>
 </select> </td></tr>
 </table>
 <input type="hidden" name="currency_code" value="USD">
