@@ -31,6 +31,10 @@ For your convenience, you can purchase directly from our site. Please note there
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+### Quick Start Guide
+
+For assistance in setting up the WiFiModem, download the Quick Start Guide [here](https://github.com/arcanebyte/arcanebyte.github.io/raw/master/guides/wifimodem_qsg_1.4.pdf).
+
 ### Action Shots
 
 {% include image.html img="wifimodem/wifimodem1.jpg" lightbox="true" alt="wifimodem" caption="wifimodem comes in male or female version" width="400" class="center" %}
