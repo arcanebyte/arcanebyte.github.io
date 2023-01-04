@@ -7,4 +7,4 @@ permalink: /contact/
 
 Thanks for your interest in ArcaneByte!
 
-For any questions regarding product availability or support, please reach out to us via email at the address below:
+For any questions regarding product availability or support, please reach out to us via email at <support@arcanebyte.com>.
