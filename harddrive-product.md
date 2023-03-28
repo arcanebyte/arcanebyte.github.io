@@ -12,8 +12,8 @@ The **Apple Parallel Port Hard Drive Emulator** faithfully emulates the [Apple P
 Tom Stepleton, who designed the Cameo/Aphid cape for the PocketBeagle and the associated software, has graciously donated his efforts to the public domain - so feel free to build one yourself! Information about the Cameo, Aphid, and Selector can be found at the following links:
 
 - Cameo: [https://github.com/stepleton/cameo](https://github.com/stepleton/cameo)
-- Aphid: [https://github.com/stepleton/cameo/tree/master/aphid](https://github.com/stepleton/cameo)
-- Selector: [https://github.com/stepleton/cameo/tree/master/aphid/selector](https://github.com/stepleton/cameo)
+- Aphid: [https://github.com/stepleton/cameo/tree/master/aphid](https://github.com/stepleton/cameo/tree/master/aphid)
+- Selector: [https://github.com/stepleton/cameo/tree/master/aphid/selector](https://github.com/stepleton/cameo/tree/master/aphid/selector)
 
 The emulator is a Linux-based system that works by presenting a disk image file as an Apple ProFile hard drive to the connected system. It supports 5MB and 10MB "ProFile" disk sizes, as well as ardbitrary sizes for operating systems that support it (i.e. MacWorks).
 
@@ -22,7 +22,8 @@ The **Apple Parallel Port Hard Drive Emulator** has been made available for sale
 - Revision A: Supports Apple Lisa 2/5 and Apple ///
 - Revision B: Supports Apple Lisa 2/5, Apple Lisa 2/10, and Apple ///
 
-Both Rev A and Rev B designs have been made available for [download](https://github.com/arcanebyte/cameo/tree/prod/hardware/arcanebyte_aphde) in EAGLE format should you choose to build one yourself.
+Both Rev A and Rev B designs have been made available for [download](https://github.com/stepleton/cameo/tree/master/hardware/arcanebyte_aphde) in EAGLE format should you 
+choose to build one yourself.
 
 ### Purchase Options
 
