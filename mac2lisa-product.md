@@ -20,8 +20,15 @@ The mac2lisa comes fully assembled, tested, and ready for use.
 
 The mac2lisa hardware is compatible with all original Apple M0110 and M0110a keyboards provided with the Macintosh 128k, Macintosh 512k, and Macintosh Plus, including the M0120 numeric keypad. Third party keyboards using the same interface may also work.
 
+### Purchase Options
 
-The mac2lisa adapter comes in two colors: white and black. Custom-engraved covers are available at an additional cost. Please specify color when ordering.
+For your convenience, you can purchase directly from our site. 
+
+<paypal-add-to-cart-button data-id="X8DWSBNP7KR2J"></paypal-add-to-cart-button>
+<script>
+  cartPaypal.AddToCart({ id: "X8DWSBNP7KR2J" })
+</script>
+
 
 {% include image.html img="mac2lisa/mac2lisa1.jpg" lightbox="true" alt="mac2lisa" caption="mac2lisa in white and black" width="400" class="center" %}
 {% include image.html img="mac2lisa/mac2lisa2.jpg" lightbox="true" alt="mac2lisa" caption="mac2lisa with optional cover" width="400" %}
