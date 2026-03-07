@@ -21,8 +21,15 @@ The adb2lisa comes fully assembled, tested, and ready for use.
 
 The adb2lisa hardware is compatible with all ADB-based keyboards using a mini DIN 4-pin ADB connector, including keyboards provided with most early Macintosh computers and the Apple IIgs. Third party keyboards used with Macintosh clones are also known to work.
 
+### Purchase Options
 
-The adb2lisa adapter comes in three colors: red, white, and black. Custom-engraved covers are available at an additional cost. Please specify color when ordering.
+For your convenience, you can purchase directly from our site. 
+
+<paypal-add-to-cart-button data-id="6NXD7BT6PM8Q2"></paypal-add-to-cart-button>
+<script>
+  cartPaypal.AddToCart({ id: "6NXD7BT6PM8Q2" })
+</script>
+
 
 {% include image.html img="adb2lisa/adb2lisa4.jpg" lightbox="true" alt="adb2lisa" caption="adb2lisa in red, white, and black" width="400" class="center" %}
 {% include image.html img="adb2lisa/adb2lisa5.jpg" lightbox="true" alt="adb2lisa" caption="adb2lisa with optional cover" width="400" %}
