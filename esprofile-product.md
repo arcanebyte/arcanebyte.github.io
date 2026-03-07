@@ -9,7 +9,7 @@ category:
 
 The **ESProfile Hard Drive Emulator** faithfully emulates the [Apple ProFile](https://en.wikipedia.org/wiki/Apple_ProFile) series of hard disk drives introduced in 1981 for the Apple /// Computer and later the Apple Lisa and Macintosh XL. With little effort, one can install Lisa Office System, MacWorks, SOS, and other operating systems for the Apple Lisa, Macintosh XL, and Apple ///.
 
-The ESProfile is the successor to the ArduinoFile by Alex McLeod-Anderson (AlexTheCat123). Information about the ESProfile and Selector (by Tom Stepleton) can be found at the following links:
+The ESProfile is the successor to the ArduinoFile by Alex Anderson-McLeod (AlexTheCat123). Information about the ESProfile and Selector (by Tom Stepleton) can be found at the following links:
 
 - ESProfile: [https://github.com/alexthecat123/ESProFile](https://github.com/alexthecat123/ESProFile)
 - Selector: [https://github.com/stepleton/cameo/tree/master/aphid/selector](https://github.com/stepleton/cameo/tree/master/aphid/selector)
