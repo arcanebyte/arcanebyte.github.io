@@ -29,9 +29,6 @@ For your convenience, you can purchase directly from our site.
   cartPaypal.AddToCart({ id: "X8DWSBNP7KR2J" })
 </script>
 
-
-{% include image.html img="mac2lisa/mac2lisa1.jpg" lightbox="true" alt="mac2lisa" caption="mac2lisa in white and black" width="400" class="center" %}
 {% include image.html img="mac2lisa/mac2lisa2.jpg" lightbox="true" alt="mac2lisa" caption="mac2lisa with optional cover" width="400" %}
-{% include image.html img="mac2lisa/mac2lisa3.jpg" lightbox="true" alt="mac2lisa" caption="mac2lisa in white" width="400" %}
 {% include image.html img="mac2lisa/mac2lisa4.jpg" lightbox="true" alt="mac2lisa" caption="mac2lisa in black" width="400" %}
 {% include image.html img="mac2lisa/mac2lisa5.jpg" lightbox="true" alt="mac2lisa" caption="mac2lisa in action" width="400" %}

@@ -22,7 +22,17 @@
       icon: modem
       url: "/wifimodem-product/"
       
+    - title: WiFiModem32
+      desc: ESP32-based wireless (wifi) modem for vintage computers
+      icon: modem
+      url: "/wifimodem32-product/"
+      
     - title: Apple Parallel Hard Drive Emulator
       desc: A parallel hard drive emulator based on cameo/aphid
       icon: disk
       url: "/harddrive-product/"
+
+    - title: ESProfile Apple Parallel Hard Drive Emulator
+      desc: A parallel hard drive emulator based on ESProfile
+      icon: profile
+      url: "/esprofile-product/"
