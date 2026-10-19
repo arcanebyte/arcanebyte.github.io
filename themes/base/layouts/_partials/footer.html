@@ -1,0 +1,23 @@
+<footer class="site-footer">
+  <div class="wrap">
+    {{- with .Site.Menus.footer }}
+    <div class="site-footer__grid">
+      {{- range . }}
+      <div>
+        <h2>{{ .Name }}</h2>
+        <ul>
+          {{- range .Children }}
+          <li><a href="{{ .URL }}"{{ if hasPrefix .URL "http" }} rel="noopener"{{ end }}>{{ .Name }}</a></li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+
+    <div class="site-footer__base">
+      {{- with .Site.Params.footerNote }}<span>{{ . | markdownify }}</span>{{ end }}
+      {{- with .Site.Params.email }}<span><a href="mailto:{{ . }}">{{ . }}</a></span>{{ end }}
+    </div>
+  </div>
+</footer>

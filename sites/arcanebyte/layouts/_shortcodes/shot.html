@@ -1,0 +1,9 @@
+{{- $img := resources.Get (.Get "src") }}
+{{- if $img }}
+  {{- $s := $img.Process "resize 900x webp q80" }}
+<figure class="shot">
+  <img src="{{ $s.RelPermalink }}" width="{{ $s.Width }}" height="{{ $s.Height }}"
+       alt="{{ .Get "alt" | default "" }}" loading="lazy" decoding="async">
+  {{- with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{- end }}

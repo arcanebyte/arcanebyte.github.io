@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArcaneByte: the workbench</title>
+<style>
+@font-face {
+  font-family: "Archivo";
+  src: url("../../../themes/base/static/fonts/archivo-var-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --bg: #151516;
+  --panel: #1f1f21;
+  --ink: #f2f0eb;
+  --ink-2: #b8b4ab;
+  --line: #2c2c2f;
+  --accent: #d9c9a3;
+  --page: 1240px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --radius: 14px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--ink); font-family: "Archivo", system-ui, sans-serif; font-stretch: 100%; -webkit-font-smoothing: antialiased; }
+body { margin: 0; font-size: 1.0625rem; line-height: 1.55; }
+img { display: block; max-width: 100%; }
+a { color: var(--accent); text-decoration: none; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--accent); color: var(--bg); }
+h1, h2, h3 { margin: 0; line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 650; }
+h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; }
+p { margin: 0; }
+.wrap { max-width: var(--page); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* header */
+.header { border-bottom: 1px solid var(--line); }
+.header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { display: flex; align-items: center; gap: 0.6rem; color: var(--ink); font-size: 1.2rem; letter-spacing: -0.01em; }
+.brand:hover { text-decoration: none; color: var(--accent); }
+.brand span { font-weight: 400; }
+.brand b { font-weight: 700; }
+.brand svg { width: 22px; height: 22px; }
+.nav { display: flex; gap: 1.75rem; }
+.nav a { color: var(--ink-2); font-size: 0.95rem; font-weight: 500; }
+.nav a:hover { color: var(--ink); text-decoration: none; }
+
+/* hero */
+.hero { background: var(--bg); }
+.hero__grid { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 880px) {
+  .hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 3rem; --bleed: max(var(--gutter), (100vw - var(--page)) / 2); }
+  .hero__grid .hero__photo { max-width: none; width: calc(100% + max(2.5rem, (100vw - 1240px) / 2)); margin-right: calc(-1 * max(2.5rem, (100vw - 1240px) / 2)); }
+}
+.hero__photo { display: block; width: 100%; height: clamp(360px, 54vh, 540px); object-fit: cover; object-position: 50% 50%; border-radius: var(--radius) 0 0 var(--radius); }
+.hero__copy { max-width: 34rem; padding-block: 2rem; }
+.hero h1 { font-size: clamp(2.5rem, 4.2vw, 3.6rem); font-weight: 700; color: #fff; }
+.hero__lede { margin-top: 1.1rem; font-size: 1.25rem; color: var(--ink-2); max-width: 28rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.25rem; border-radius: 10px; font-weight: 600; font-size: 0.95rem; border: 1px solid var(--line); color: var(--ink); background: var(--panel); transition: background-color 140ms var(--ease), color 140ms var(--ease); }
+.btn:hover { text-decoration: none; background: #2a2a2d; }
+.btn--primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.btn--primary:hover { background: #e6d8b6; }
+
+/* machines */
+.machines { padding-block: clamp(3rem, 6vw, 4.5rem); }
+.machines h2 { margin-bottom: 1.5rem; }
+.machines__grid { display: grid; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+@media (min-width: 640px) { .machines__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .machines__grid { grid-template-columns: repeat(4, 1fr); } }
+.machine { padding: 1.5rem 1.5rem 1.5rem 0; border-top: 1px solid var(--line); }
+.machine:first-child { border-top: 0; }
+@media (min-width: 640px) {
+  .machine { padding-inline: 1.5rem; border-left: 1px solid var(--line); }
+  .machine:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .machine:nth-child(-n+2) { border-top: 0; }
+}
+@media (min-width: 1000px) {
+  .machine { border-top: 0; border-left: 1px solid var(--line); padding-inline: 1.5rem; }
+  .machine:first-child { border-left: 0; padding-left: 0; }
+  .machine:nth-child(odd) { border-left: 1px solid var(--line); padding-left: 1.5rem; }
+  .machine:first-child { border-left: 0; padding-left: 0; }
+}
+.machine h3 { font-size: 1.0625rem; }
+.machine ul { list-style: none; margin: 0.75rem 0 0; padding: 0; }
+.machine li + li { margin-top: 0.3rem; }
+.machine a { font-size: 0.95rem; }
+
+/* groups */
+.group { padding-block: 0 clamp(3rem, 6vw, 5rem); }
+.group__head { display: grid; gap: 0.5rem 2rem; align-items: baseline; padding-bottom: 1.25rem; margin-bottom: 1.75rem; border-bottom: 1px solid var(--line); }
+@media (min-width: 800px) { .group__head { grid-template-columns: 1fr 1fr; } .group__head p { text-align: right; } }
+.group__head p { color: var(--ink-2); max-width: 46ch; justify-self: end; }
+
+.products { list-style: none; margin: 0; padding: 0; display: grid; gap: 2.5rem 2rem; }
+@media (min-width: 720px) { .products { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .products--4 { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
+.products--1 { grid-template-columns: 1fr; }
+@media (min-width: 720px) { .products--1 .product { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; } .products--1 .product__text { margin-top: 0; } }
+.product { display: block; color: var(--ink); }
+.product:hover { text-decoration: none; }
+.product__media { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; background: #000; transition: filter 220ms var(--ease); }
+.product__media img { width: 100%; height: 100%; object-fit: cover; }
+.product:hover .product__media { filter: brightness(1.08); }
+.product__media--label { background: var(--panel); padding: 12%; display: grid; place-items: center; }
+.product__media--label img { height: auto; object-fit: contain; border-radius: 4px; }
+.product__text { margin-top: 1rem; }
+.product__name { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; transition: color 140ms var(--ease); }
+.product:hover .product__name { color: var(--accent); }
+.product__desc { margin-top: 0.3rem; color: var(--ink-2); }
+.product__fits { margin-top: 0.4rem; color: var(--ink-2); font-size: 0.9rem; }
+.product__action { margin-top: 0.75rem; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+.product__action svg { width: 16px; height: 16px; transition: transform 160ms var(--ease); }
+.product:hover .product__action svg { transform: translateX(3px); }
+.product__action--dev { color: var(--ink-2); font-weight: 500; }
+.product__action--dev::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink-2); }
+.products--4 .product__name { font-size: 1.125rem; }
+.products--4 .product__desc { font-size: 0.95rem; }
+
+/* closing band */
+.band { background: var(--panel); padding-block: clamp(3rem, 6vw, 4.5rem); }
+.closing { display: grid; gap: 2.5rem clamp(2rem, 5vw, 4rem); }
+@media (min-width: 860px) { .closing { grid-template-columns: 1fr 1fr; } }
+.closing h2 { margin-bottom: 1.25rem; }
+.howto dl { margin: 0; }
+.howto dl > div { display: grid; grid-template-columns: 8rem 1fr; gap: 0.25rem 1rem; padding-block: 0.85rem; border-top: 1px solid #333336; }
+.howto dt { font-weight: 600; }
+.howto dd { margin: 0; color: var(--ink-2); }
+.howto > p { margin-top: 1rem; color: var(--ink-2); font-size: 0.95rem; }
+@media (max-width: 480px) { .howto dl > div { grid-template-columns: 1fr; } }
+.about p { color: var(--ink-2); max-width: 60ch; }
+.about p + p { margin-top: 0.75rem; }
+
+/* footer */
+.footer { border-top: 1px solid var(--line); padding-block: 3rem; font-size: 0.9rem; }
+.footer__grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.footer h3 { font-size: 0.9rem; margin-bottom: 0.75rem; }
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li + li { margin-top: 0.35rem; }
+.footer a { color: var(--ink-2); }
+.footer a:hover { color: var(--accent); }
+.footer__fine { margin-top: 2.5rem; color: var(--ink-2); font-size: 0.85rem; }
+
+@media (max-width: 879px) {
+  .nav { display: none; }
+  .hero__photo { order: -1; height: auto; aspect-ratio: 4 / 3; border-radius: var(--radius); margin-top: 1.5rem; }
+  .hero__copy { padding-block: 0 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg>
+      <span>arcane</span><b>byte</b>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#products">Catalog</a>
+      <a href="#order">Where to buy</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <h1>Goodies for machines nobody supports.</h1>
+      <p class="hero__lede">Hand-built adapters, modems, and drive emulators for the Apple Lisa, Macintosh XL, and Apple ///.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#products">See the products</a>
+        <a class="btn" href="#order">Where to buy</a>
+      </div>
+    </div>
+    <img class="hero__photo" src="../../../sites/arcanebyte/assets/img/products/adb2lisa/adb2lisa4.jpg" alt="adb2lisa adapters in red, white, and black on the bench">
+  </div>
+</section>
+
+<section class="wrap machines">
+  <h2>Which machine do you have?</h2>
+  <div class="machines__grid">
+    <div class="machine"><h3>Apple Lisa</h3><ul><li><a href="#">adb2lisa</a></li><li><a href="#">mac2lisa</a></li><li><a href="#">usb2lisa</a></li><li><a href="#">Apple Parallel Hard Drive Emulator</a></li></ul></div>
+    <div class="machine"><h3>Macintosh XL</h3><ul><li><a href="#">adb2lisa</a></li><li><a href="#">mac2lisa</a></li><li><a href="#">usb2lisa</a></li></ul></div>
+    <div class="machine"><h3>Apple ///</h3><ul><li><a href="#">Apple Parallel Hard Drive Emulator</a></li></ul></div>
+    <div class="machine"><h3>Anything with an RS232 port</h3><ul><li><a href="#">WiFiModem</a></li><li><a href="#">WiFiModem32</a></li></ul></div>
+  </div>
+</section>
+
+<div id="products">
+
+<section class="wrap group">
+  <div class="group__head"><h2>Keyboard adapters</h2><p>Use a USB, ADB, or original Macintosh keyboard on a Lisa or Macintosh XL.</p></div>
+  <ul class="products">
+    <li><a class="product" href="#">
+      <div class="product__media"><img src="../../../sites/arcanebyte/assets/img/products/adb2lisa/adb2lisa4.jpg" alt="adb2lisa"></div>
+      <div class="product__text"><h3 class="product__name">adb2lisa</h3><p class="product__desc">Connects Apple Desktop Bus (ADB) keyboards to the Apple Lisa and Macintosh XL.</p><p class="product__fits">Fits Apple Lisa, Macintosh XL</p><span class="product__action">Order <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+    </a></li>
+    <li><a class="product" href="#">
+      <div class="product__media"><img src="../../../sites/arcanebyte/assets/img/products/mac2lisa/mac2lisa4.jpg" alt="mac2lisa"></div>
+      <div class="product__text"><h3 class="product__name">mac2lisa</h3><p class="product__desc">Connects Macintosh 128k/512k/Plus keyboards to the Apple Lisa and Macintosh XL.</p><p class="product__fits">Fits Apple Lisa, Macintosh XL</p><span class="product__action">Order <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+    </a></li>
+    <li><a class="product" href="#">
+      <div class="product__media"><img src="../../../sites/arcanebyte/assets/img/products/usb2lisa/usb2lisa1.jpg" alt="usb2lisa"></div>
+      <div class="product__text"><h3 class="product__name">usb2lisa</h3><p class="product__desc">Connects Universal Serial Bus (USB) keyboards to the Apple Lisa and Macintosh XL.</p><p class="product__fits">Fits Apple Lisa, Macintosh XL</p><span class="product__action">Email to order <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+    </a></li>
+  </ul>
+</section>
+
+<section class="wrap group">
+  <div class="group__head"><h2>Modems</h2><p>Put a machine with an RS232 serial port on WiFi, and dial a BBS by IP address.</p></div>
+  <ul class="products">
+    <li><a class="product" href="#">
+      <div class="product__media"><img src="../../../sites/arcanebyte/assets/img/products/wifimodem/wifimodem1.jpg" alt="WiFiModem"></div>
+      <div class="product__text"><h3 class="product__name">WiFiModem</h3><p class="product__desc">ESP8266-based wireless modem for vintage computers with an RS232 serial port.</p><p class="product__fits">Fits any machine with an RS232 serial port</p><span class="product__action">Order <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+    </a></li>
+    <li><a class="product" href="#">
+      <div class="product__media"><img src="../../../sites/arcanebyte/assets/img/products/wifimodem/wifimodem3.jpg" alt="WiFiModem32"></div>
+      <div class="product__text"><h3 class="product__name">WiFiModem32</h3><p class="product__desc">ESP32-based wireless modem for vintage computers, with SSH support.</p><p class="product__fits">Fits any machine with an RS232 serial port</p><span class="product__action">Order <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+    </a></li>
+  </ul>
+</section>
+
+<section class="wrap group">
+  <div class="group__head"><h2>Hard drive emulators</h2><p>Stand in for an Apple ProFile hard disk, using disk image files.</p></div>
+  <ul class="products products--1">
+    <li><a class="product" href="#">
+      <div class="product__media"><img src="../../../sites/arcanebyte/assets/img/products/harddrive/harddrive1.jpg" alt="Apple Parallel Hard Drive Emulator"></div>
+      <div class="product__text"><h3 class="product__name">Apple Parallel Hard Drive Emulator</h3><p class="product__desc">A ProFile hard drive emulator for the Apple Lisa and Apple ///, based on Cameo/Aphid.</p><p class="product__fits">Fits Apple Lisa, Apple ///</p><span class="product__action">Email to order <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+    </a></li>
+  </ul>
+</section>
+
+<section class="wrap group">
+  <div class="group__head"><h2>In the workshop</h2><p>Cards for the Lisa that are designed but not built yet.</p></div>
+  <ul class="products products--4">
+    <li><a class="product" href="#">
+      <div class="product__media product__media--label"><img src="../../../sites/arcanebyte/assets/img/products/lisaboost/label.png" alt="LisaBoost label"></div>
+      <div class="product__text"><h3 class="product__name">LisaBoost</h3><p class="product__desc">A faster 68000 and up to 32 MB of memory</p><p class="product__fits">Fits Apple Lisa</p><span class="product__action product__action--dev">In development</span></div>
+    </a></li>
+    <li><a class="product" href="#">
+      <div class="product__media product__media--label"><img src="../../../sites/arcanebyte/assets/img/products/apple2e/label.png" alt="Apple IIe Card label"></div>
+      <div class="product__text"><h3 class="product__name">Apple IIe Card</h3><p class="product__desc">A real 65C02 and the enhanced IIe's ROMs on a card so the Lisa can run Apple II software.</p><p class="product__fits">Fits Apple Lisa</p><span class="product__action product__action--dev">In development</span></div>
+    </a></li>
+    <li><a class="product" href="#">
+      <div class="product__media product__media--label"><img src="../../../sites/arcanebyte/assets/img/products/lisacolor/label.png" alt="LisaColor label"></div>
+      <div class="product__text"><h3 class="product__name">LisaColor</h3><p class="product__desc">A video card that gives MacWorks a 16-color desktop on a modern display.</p><p class="product__fits">Fits Apple Lisa</p><span class="product__action product__action--dev">In development</span></div>
+    </a></li>
+    <li><a class="product" href="#">
+      <div class="product__media product__media--label"><img src="../../../sites/arcanebyte/assets/img/products/lisalink/label.png" alt="LisaLink label"></div>
+      <div class="product__text"><h3 class="product__name">LisaLink</h3><p class="product__desc">An Ethernet and WiFi card that puts the Lisa on a modern network.</p><p class="product__fits">Fits Apple Lisa</p><span class="product__action product__action--dev">In development</span></div>
+    </a></li>
+  </ul>
+</section>
+
+</div>
+
+<section class="band" id="order">
+  <div class="wrap closing">
+    <div class="howto">
+      <h2>How to order</h2>
+      <dl>
+        <div><dt>Here</dt><dd>Most products have a PayPal order form on their page.</dd></div>
+        <div><dt>Marketplaces</dt><dd><a href="#">eBay</a>, <a href="#">Tindie</a>, <a href="#">Etsy</a></dd></div>
+        <div><dt>Direct</dt><dd>Email <a href="mailto:support@arcanebyte.com">support@arcanebyte.com</a> for an invoice.</dd></div>
+      </dl>
+      <p>30-day returns and a 30-day warranty. More in the <a href="#">FAQ</a>.</p>
+    </div>
+    <div class="about">
+      <h2>About</h2>
+      <p>ArcaneByte was established in 2018 as a maker in the vintage computing space. We specialize particularly in the Apple Lisa and Macintosh XL, but offer a variety of gadgets that are compatible with other vintage systems.</p>
+      <p>San Antonio, Texas.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div><h3>Keyboard adapters</h3><ul><li><a href="#">adb2lisa</a></li><li><a href="#">mac2lisa</a></li><li><a href="#">usb2lisa</a></li></ul></div>
+      <div><h3>Modems</h3><ul><li><a href="#">WiFiModem</a></li><li><a href="#">WiFiModem32</a></li></ul></div>
+      <div><h3>Hard drive emulators</h3><ul><li><a href="#">Apple Parallel Hard Drive Emulator</a></li></ul></div>
+      <div><h3>In the workshop</h3><ul><li><a href="#">LisaBoost</a></li><li><a href="#">Apple IIe Card</a></li><li><a href="#">LisaColor</a></li><li><a href="#">LisaLink</a></li></ul></div>
+      <div><h3>Buying</h3><ul><li><a href="#">Where to buy</a></li><li><a href="#">FAQ</a></li><li><a href="#">eBay</a></li></ul></div>
+      <div><h3>ArcaneByte</h3><ul><li><a href="#">Contact</a></li><li><a href="#">YouTube</a></li><li><a href="#">GitHub</a></li></ul></div>
+    </div>
+    <p class="footer__fine">ArcaneByte, San Antonio, Texas. Since 2018.</p>
+  </div>
+</footer>
+
+</body>
+</html>

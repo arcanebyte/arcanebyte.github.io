@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale | default "en" }}">
+{{ partial "head.html" . }}
+<body>
+{{- /* Design contract. Go templates drop HTML comments, so it goes out through safeHTML. */}}
+{{ `<!--
+THESIS: A small hardware maker's shop in the shape buyers already know, with a landing page that is only the hero and the products. The owner's reference is shop.bigmessowires.com; the refusal is any costume, and any section the landing page does not need.
+OWN-WORLD: Black header bar with the floppy mark and the wordmark in white. Navy hero panel beside the lead photo. White page, 4px corners, hairline frames on photos, light gray tiles for printed labels and the footer. Inter is the single face. One blue for the primary action. Nothing floats, nothing glows.
+STORY: An owner lands from eBay or a forum, sees the Lisa boards, scans two groups (for the Lisa, for anything with a serial port), opens a product, and orders through PayPal or a marketplace. About and ordering notes wait in the footer and on their own pages.
+FIRST VIEWPORT: The black bar; a split hero, the adb2lisa pair at left and the navy panel at right with the headline, one line, and a white "See the products" button; the "For the Apple Lisa" heading and the top of its 4-up grid.
+FORM: The trimmed shop, chosen 2026-10-18 from a hand of three quiet landing pages (.impeccable/mocks/round2/payload-round3.json, comp trimmed.png) after the owner's steer: everything is for the Lisa or is an RS232 modem, there may be more later, and the landing page was busy. Bar: shop.bigmessowires.com.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->` | safeHTML }}
+  <a class="skip" href="#main">Skip to content</a>
+  {{ partial "header.html" . }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+</html>

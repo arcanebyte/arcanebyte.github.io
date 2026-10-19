@@ -1,0 +1,85 @@
+baseURL = "https://www.arcanebyte.com/"
+locale = "en-us"
+title = "ArcaneByte"
+enableRobotsTXT = true
+themesDir = "../../themes"
+theme = "base"
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+  description = "Hand-built keyboard adapters, wireless modems, and hard drive emulators for the Apple Lisa, Macintosh XL, and Apple ///."
+  email = "support@arcanebyte.com"
+  consultingEmail = "consulting@arcanebyte.com"
+  location = "San Antonio, Texas"
+  since = 2018
+
+  [params.brand]
+    lead = "Arcane"
+    trail = "Byte"
+
+  # Catalog groups, in the order they print. Each product names its group in
+  # front matter as `group`. Within a group, products for sale print first and
+  # anything with a `status` (not built yet) prints in a second row. A new
+  # group is one more entry here.
+  [[params.catalog]]
+    name = "For the Apple Lisa"
+    note = "Also the Macintosh XL. The hard drive emulator fits the Apple /// too."
+  [[params.catalog]]
+    name = "For anything with an RS232 serial port"
+
+  # PayPal merchant account behind the cart. Per-product button IDs live in
+  # each product's front matter as paypalID.
+  [params.paypal]
+    merchantID = "YG4H3RRB2A3MQ"
+    cartJS = "https://www.paypalobjects.com/ncp/cart/cart.js"
+
+[[params.stores]]
+  name = "eBay"
+  url = "https://www.ebay.com/sch/arcanebyte/"
+  icon = "ebay"
+[[params.stores]]
+  name = "Tindie"
+  url = "https://www.tindie.com/stores/arcanebyte/"
+  icon = "tindie"
+[[params.stores]]
+  name = "Etsy"
+  url = "https://www.etsy.com/shop/ArcaneByte"
+  icon = "etsy"
+
+[[params.social]]
+  name = "YouTube"
+  url = "https://www.youtube.com/channel/UCX5wBgD-FTFdttN_vWXXhMw"
+[[params.social]]
+  name = "GitHub"
+  url = "https://github.com/arcanebyte"
+
+[menu]
+  [[menu.main]]
+    name = "Catalog"
+    pageRef = "/products"
+    weight = 10
+  [[menu.main]]
+    name = "Where to buy"
+    pageRef = "/purchase"
+    weight = 30
+  [[menu.main]]
+    name = "FAQ"
+    pageRef = "/faq"
+    weight = 40
+  [[menu.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 50
+
+[markup.goldmark.renderer]
+  unsafe = true
+[markup.highlight]
+  noClasses = false
+  style = "github"
+  tabWidth = 2
+
+[minify]
+  disableXML = true
+  # Keeps the design contract comment at the top of <body> in production.
+  [minify.tdewolff.html]
+    keepComments = true

@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{- $kits := (where .Site.RegularPages "Section" "products").ByWeight }}
+{{- $lead := index (where $kits "Params.image" "!=" nil) 0 }}
+
+<section class="wrap hero">
+  <div class="hero__box">
+    <div class="hero__photo">
+      {{- with $lead }}
+        {{- with resources.Get .Params.image }}
+          {{- $plate := (.Resize "1600x webp q80").Filter (images.UnsharpMask 0.5 0.7 0.02) }}
+      <img src="{{ $plate.RelPermalink }}" width="{{ $plate.Width }}" height="{{ $plate.Height }}" alt="{{ $lead.Title }}" decoding="async" fetchpriority="high">
+        {{- end }}
+      {{- end }}
+    </div>
+    <div class="hero__panel">
+      <h1>Goodies for machines nobody supports.</h1>
+      <p>Hand-built adapters, modems, and drive emulators for the Apple Lisa, Macintosh XL, and Apple ///.</p>
+      <a class="btn btn--white" href="#products">See the products</a>
+    </div>
+  </div>
+</section>
+
+{{ partial "catalog.html" .Site }}
+{{ end }}

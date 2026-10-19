@@ -1,0 +1,138 @@
+/* ArcaneByte shop layer: the hero, the product groups and tiles, the product
+ * page, and the stores list. Tokens and base voice are in
+ * themes/base/assets/css/base.css. */
+
+/* ---------- hero ---------- */
+
+.hero { padding-top: 2.25rem; }
+.hero__box {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-radius: var(--radius); overflow: hidden; min-height: 460px;
+}
+.hero__photo { background: #111; }
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
+.hero__panel {
+  background: var(--navy); color: #fff;
+  padding: 3.5rem 3.25rem;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.hero__panel h1 { font-size: 2.5rem; color: #fff; max-width: 14ch; }
+.hero__panel p { margin-top: 1.125rem; max-width: 42ch; color: rgba(255, 255, 255, .92); }
+.hero__panel .btn { margin-top: 1.875rem; }
+.hero__panel ::selection { background: #fff; color: var(--navy); }
+
+@media (max-width: 900px) {
+  .hero__box { grid-template-columns: 1fr; min-height: 0; }
+  .hero__photo { aspect-ratio: 4 / 3; }
+  .hero__panel { padding: 2.25rem 1.75rem; }
+  .hero__panel h1 { font-size: 2rem; }
+}
+@media (max-width: 760px) { .hero { padding-top: 1rem; } }
+
+/* ---------- product groups + tiles ---------- */
+
+/* Each group is one .group: a heading, an optional note, and one or more
+   4-up rows. A third group later is another .group, nothing else. */
+.group { padding-top: 3.5rem; scroll-margin-top: 1rem; }
+.group h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+.group__note { margin-top: 0.375rem; color: var(--ink-2); max-width: 60ch; }
+.group .grid { margin-top: 1.5rem; }
+.group .grid + .grid { margin-top: 2.25rem; }
+
+.grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 2.25rem 1.25rem; grid-template-columns: repeat(4, 1fr);
+}
+.item a { display: block; color: var(--ink); }
+.item a:hover { text-decoration: none; }
+.item a:hover .item__name { text-decoration: underline; }
+.item__media {
+  aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; background: #111; display: grid; place-items: center;
+}
+.item__media img { width: 100%; height: 100%; object-fit: cover; }
+.item__media--tile { background: var(--tile); border-color: var(--tile); padding: 10%; }
+.item__media--tile img { height: auto; object-fit: contain; border-radius: 3px; }
+.item__noplate { font-size: 0.875rem; color: #fff; }
+.item__name { margin-top: 0.75rem; font-size: 0.875rem; font-weight: 500; line-height: 1.4; }
+.item__sub { margin-top: 0.25rem; font-size: 0.8125rem; color: var(--ink-2); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1rem; }
+  .group .grid + .grid { margin-top: 1.75rem; }
+}
+
+/* ---------- product page ---------- */
+
+.pdp { display: grid; gap: 2.5rem; padding-top: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (min-width: 900px) { .pdp { grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr); gap: clamp(2rem, 4vw, 3.5rem); } }
+
+.pdp__main img { width: 100%; background: #111; }
+.pdp__main--label img { padding: 8%; background: var(--tile); object-fit: contain; }
+.pdp__main figcaption:empty { display: none; }
+.pdp__noplate {
+  aspect-ratio: 4 / 3; display: grid; place-items: center;
+  background: var(--tile); border-radius: var(--radius); color: var(--ink-2);
+}
+
+.pdp__thumbs { list-style: none; margin: 0.75rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pdp__thumbs a {
+  display: block; width: 72px; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; background: #111;
+  transition: border-color 120ms var(--ease);
+}
+.pdp__thumbs a:hover { border-color: var(--ink-2); }
+.pdp__thumbs a[aria-current] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.pdp__thumbs img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+.pdp__info h1 { font-size: clamp(1.75rem, 3.2vw, 2.25rem); }
+.pdp__lede { margin-top: 0.75rem; color: var(--ink-2); font-size: 1rem; max-width: 48ch; }
+
+.buy { margin-top: 1.5rem; display: grid; gap: 1rem; }
+.buy > * { margin: 0; }
+.buy__fits { font-size: 0.875rem; color: var(--ink-2); }
+.buy__fits span { color: var(--ink); font-weight: 600; }
+/* PayPal prints its own title and description here, so a rule separates them
+   from the page's own. */
+.buy__cart { width: 100%; padding-top: 1rem; border-top: 1px solid var(--line); }
+.buy__note { font-size: 0.9375rem; color: var(--ink-2); }
+.buy__state {
+  display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 500;
+  justify-self: start;
+}
+.buy__state::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-2); }
+.buy__guide a { text-decoration: underline; }
+.buy__guide a:hover { color: var(--blue); }
+
+.perks { list-style: none; margin: 0; padding: 1rem 0 0; border-top: 1px solid var(--line); display: grid; gap: 0.6rem; font-size: 0.875rem; }
+.perks li { display: flex; align-items: center; gap: 0.6rem; }
+.perks svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.buy__stores { font-size: 0.875rem; color: var(--ink-2); }
+.buy__stores a { text-decoration: underline; color: var(--ink); }
+.buy__stores a:hover { color: var(--blue); }
+
+.pdp__details { display: grid; gap: 2.5rem; padding-top: clamp(2.5rem, 5vw, 4rem); align-items: start; }
+@media (min-width: 900px) { .pdp__details:not(.pdp__details--solo) { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(2rem, 4vw, 3.5rem); } }
+.pdp__details .prose > h2:first-child { margin-top: 0; font-size: 1.375rem; }
+.pdp__details .prose a { overflow-wrap: anywhere; }
+
+.pdp__photos { display: grid; gap: 1.25rem; }
+@media (min-width: 600px) { .pdp__photos--many { grid-template-columns: 1fr 1fr; } }
+
+.related { padding-top: clamp(2.5rem, 5vw, 4rem); }
+.related h2 { font-size: 1.375rem; margin-bottom: 1.25rem; }
+
+/* ---------- where to buy ---------- */
+
+.stores { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+@media (min-width: 640px) { .stores { grid-template-columns: repeat(2, 1fr); } }
+.store {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--radius);
+  color: var(--ink); transition: background-color 120ms var(--ease);
+}
+.store:hover { text-decoration: none; background: var(--tile); }
+.store img { width: 28px; height: 28px; flex: none; }
+.store > span { display: flex; flex-direction: column; }
+.store strong { font-weight: 600; }
+.store span span { font-size: 0.875rem; color: var(--ink-2); }

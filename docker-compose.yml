@@ -1,0 +1,10 @@
+services:
+  sites:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    image: arcanebyte-sites
+    restart: unless-stopped
+    ports:
+      # 8080 is often already taken locally; these are just the host-side ports.
+      - "8090:80"   # arcanebyte.com

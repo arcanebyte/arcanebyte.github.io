@@ -1,0 +1,132 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned The Annotated Brochure. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Annotated Brochure",
+      "kicker": "THE ROLL",
+      "lineage": "1983 computer-brochure spreads",
+      "thesis": "Every kit photographed on a studio sweep with numbered leader lines naming its parts, the way a 1983 brochure taught you the machine.",
+      "palette": ["#e6e3dc", "#1a1a1a", "#c8102e", "#8c8982"],
+      "materials": ["studio sweep", "leader-line callouts", "long-copy serif"],
+      "viewport": "Full-width photo of the adb2lisa on a warm gray sweep. Six numbered leader lines name the Lisa connector, the crystal, the layout jumpers. The headline sits in one serif at the left, the copy runs long underneath, and the buy block sits where 'see your dealer' would.",
+      "risk": "It is the most familiar shape on the table, a photo and copy, and it leans on type and ground to stay out of Apple's own look.",
+      "raised": [
+        { "from": "challenger-darkroom", "raise": "The sweep gray owns the whole page, every section, not a hero banner on white." },
+        { "from": "challenger-bazaar", "raise": "One accent, reserved for the live action: the buy button, nothing else." },
+        { "from": "challenger-pushpin", "raise": "Every state is a flat fill swap. No shadows, no gradients, hover inverts." },
+        { "from": "challenger-lineup", "raise": "One type family does every job. Hierarchy is size and line break alone, no second face, no mono labels." }
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "Lisa Office System",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "the Lisa's own 1983 desktop",
+      "thesis": "The shop runs inside the Lisa's own bitmapped desktop: the catalog is a filing cabinet, each kit a document window, and the photo sits in its own window in true color.",
+      "palette": ["#ffffff", "#000000", "#9a9a9a"],
+      "materials": ["1-bit dither", "Lisa window chrome", "stationery pads"],
+      "viewport": "A Lisa desktop, scaled to the browser. A window titled 'Catalog' lists kits as document icons by drawer. One is open beside it: the real photo in true color, the Fits line, and a Buy button drawn as a Lisa button.",
+      "risk": "This is the direction most Lisa lovers would build, and it turns into a costume the moment the chrome is imitated instead of used for navigation. The 1-bit world must stop at the photo's edge.",
+      "comp": ".impeccable/mocks/decision/model-pick.png"
+    },
+    {
+      "id": "challenger-hypercard",
+      "label": "HyperCard Stack",
+      "verdict": "competitive",
+      "lineage": "HyperCard shoebox stacks",
+      "thesis": "A stack of black-and-white cards, one per kit, with painted buttons and a dissolve between them.",
+      "palette": ["#ffffff", "#000000", "#808080"],
+      "materials": ["stipple dither", "painted buttons", "Chicago and Geneva"],
+      "viewport": "The Home card: kit cards fanned by group in a shoebox. Clicking one dissolves to its card, the photo in a picture field in true color, and a Buy button painted by hand.",
+      "case": "Wins identification outright. It shares its 1-bit material with the pick, and it holds clarity only if the fixed card proportion survives eleven products.",
+      "risk": "Reads as a nostalgia skin if the painted buttons aren't the real navigation.",
+      "comp": ".impeccable/mocks/decision/challenger-hypercard.png",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-hypercard-stack-shoebox-hero.webp"
+    },
+    {
+      "id": "challenger-brick",
+      "label": "Build Instructions",
+      "verdict": "competitive",
+      "lineage": "brick build-instruction booklets",
+      "thesis": "The shop as an assembly booklet: a parts inventory up front, then each kit as a numbered step with its connector shown 1:1 in a cornered call-out.",
+      "palette": ["#7fb7e6", "#111111", "#d7262c", "#f5c400"],
+      "materials": ["sky-blue page", "keyline ink", "stud grid"],
+      "viewport": "A sky-blue page. A giant step numeral, the adb2lisa photo seated on a stud grid, its Lisa connector shown 1:1 in the corner box. The parts inventory, every kit at small scale, runs across the top.",
+      "case": "Holds clarity, since fit and sequence are its whole grammar, but the audience's world is Lisa manuals, not bricks.",
+      "risk": "The booklet wants keyline drawings of every board, and the shop has photos, not drawings.",
+      "comp": ".impeccable/mocks/decision/challenger-brick.png",
+      "hero": "https://impeccable.style/worlds/cards/games-toys-physics-play-brick-build-instructions-hero.webp"
+    },
+    {
+      "id": "challenger-darkroom",
+      "label": "Darkroom Safelight",
+      "verdict": "declined",
+      "lineage": "printing darkrooms under amber safelight",
+      "thesis": "The shop as a darkroom: amber light over everything, each kit emerging in a tray.",
+      "palette": ["#ffb347", "#2a1d0e", "#f2f0ea"],
+      "materials": ["amber safelight", "enamel tray"],
+      "viewport": "An amber-washed field with kits as prints on a drying line.",
+      "case": "Lisa owners don't identify with a darkroom, and chemical stations make checkout a ritual it isn't.",
+      "kept": "Total ground commitment: one tint owns every surface.",
+      "risk": "Amber over real product photos falsifies the board colors buyers choose from.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-darkroom-safelight-bay-hero.webp"
+    },
+    {
+      "id": "challenger-bazaar",
+      "label": "Moon-Shadow Bazaar",
+      "verdict": "declined",
+      "lineage": "a surreal night market",
+      "thesis": "Kits as goods on stalls down a moonlit lane, each with a ticket of origin.",
+      "palette": ["#0f1a33", "#e3b23c", "#f4f1ea"],
+      "materials": ["stall canvas", "chalked tickets"],
+      "viewport": "A dark lane of stalls, each kit tagged with a chalk ticket.",
+      "case": "No Lisa owner recognizes a shadow market, and the goods are real boards, not shadows.",
+      "kept": "One light for the live item: the accent belongs to the active action only.",
+      "risk": "A dark ground hides the boards the photos are there to show.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-moon-shadow-bazaar-hero.webp"
+    },
+    {
+      "id": "challenger-pushpin",
+      "label": "Push Pin Poster",
+      "verdict": "declined",
+      "lineage": "Push Pin Studios posters",
+      "thesis": "Each kit as a flat candy-colored illustration anchored by a black silhouette.",
+      "palette": ["#f4e9d6", "#111111", "#f28cb1", "#2bb3a3", "#f2a51a"],
+      "materials": ["flat candy fills", "contour line"],
+      "viewport": "A poster per section with an illustrated board in flat color.",
+      "case": "Illustrated silhouettes would displace the real photos the buyer needs.",
+      "kept": "Flat state: fills swap on hover, nothing shades.",
+      "risk": "Illustration is work the shop doesn't have on hand.",
+      "hero": "https://impeccable.style/worlds/cards/brand-identity-canon-push-pin-poster-hero.webp"
+    },
+    {
+      "id": "challenger-lineup",
+      "label": "Festival Lineup",
+      "verdict": "declined",
+      "lineage": "festival lineup posters",
+      "thesis": "No pictures: every kit set in one face, hierarchy by size alone.",
+      "palette": ["#d7262c", "#111111"],
+      "materials": ["one condensed face", "justified block"],
+      "viewport": "A red sheet, adb2lisa spanning the width, the rest justified into a block at the foot.",
+      "case": "No imagery at all fails a shop whose photos are the proof.",
+      "kept": "One face, hierarchy by size alone.",
+      "risk": "A shop with no photos sells nothing.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-festival-lineup-poster-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "The storefront",
+    "thesis": "What this category ships: a hero photo, a headline, and a product grid, executed well.",
+    "palette": ["#ffffff", "#111827", "#2563eb"],
+    "materials": ["product grid", "hero photo", "blue buttons"],
+    "viewport": "Hero photo with a headline and a Shop button, then a 3-up product grid.",
+    "risk": "Looks like every other shop, by design."
+  },
+  "steer": true
+}

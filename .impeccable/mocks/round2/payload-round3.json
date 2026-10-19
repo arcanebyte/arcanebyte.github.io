@@ -1,0 +1,71 @@
+{
+  "title": "A quieter landing page",
+  "question": "Your steer: everything is for the Lisa or is an RS232 modem, there may be more later, and the landing page is busy. Three answers to that, each with the machine picker, the about text, and the ordering notes gone, and the products in two groups with room for a third. Pick one, or steer again.",
+  "options": [
+    {
+      "id": "doors",
+      "label": "Two doors",
+      "lineage": "a shop with two counters",
+      "thesis": "The landing page is two choices and nothing else: a Lisa door and an RS232 door, each a gray panel with one photo and its products listed under it.",
+      "palette": [
+        "#ffffff",
+        "#f5f5f7",
+        "#1d1d1f",
+        "#0b5fd6"
+      ],
+      "materials": [
+        "two gray panels",
+        "one photo per door",
+        "plain product rows"
+      ],
+      "viewport": "The centered headline and lede, then the tops of the two doors side by side: the adb2lisa pair in the left panel, the two modems in the right. A third door later is a third panel.",
+      "risk": "The two doors are unequal: eight products on the left, two on the right. The right door will look thin until the modem side grows.",
+      "comp": ".impeccable/mocks/round2/doors.png"
+    },
+    {
+      "id": "list",
+      "label": "The list",
+      "lineage": "a hardware maker's product index",
+      "thesis": "The whole landing page is one product list with small photos, under two group rules. Nothing competes with the list.",
+      "palette": [
+        "#ffffff",
+        "#1d1d1f",
+        "#6e6e73",
+        "#c8102e"
+      ],
+      "materials": [
+        "96px thumbnails",
+        "hairline rows",
+        "one red word"
+      ],
+      "viewport": "The headline and lede at left with air around them, then the \"For the Apple Lisa\" rule and the first rows: a square thumbnail, the name, one line, and the word Order in red at the right.",
+      "risk": "It is the calmest page on the table and the one with the least to look at. The boards show only at thumbnail size until a product page is opened.",
+      "comp": ".impeccable/mocks/round2/list.png"
+    },
+    {
+      "id": "trimmed",
+      "label": "The trimmed shop",
+      "lineage": "the BMOW-style shop from the last round, with most of the landing page removed",
+      "thesis": "Same Shopify-shaped shop, same black bar and navy hero, but the landing page is only the hero and two product grids.",
+      "palette": [
+        "#ffffff",
+        "#000000",
+        "#1f2a44",
+        "#2b5fd9"
+      ],
+      "materials": [
+        "black header bar",
+        "navy hero panel",
+        "4-up product grid"
+      ],
+      "viewport": "Unchanged from the shop: the black bar, the split hero with the adb2lisa pair and the navy panel. Under it \"For the Apple Lisa\" and its 4-up grid, then the modems.",
+      "risk": "It is the least changed of the three, and the empty slots in the modem row are honest but visible.",
+      "comp": ".impeccable/mocks/round2/trimmed.png"
+    }
+  ],
+  "reroll": true,
+  "canon": false,
+  "steer": true,
+  "approved": "trimmed",
+  "approvedOn": "2026-10-18"
+}

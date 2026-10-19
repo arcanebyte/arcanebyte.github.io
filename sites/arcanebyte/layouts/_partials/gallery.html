@@ -1,0 +1,17 @@
+{{- /* The photos left after the lead photo, stacked beside the product
+       details. Takes the list of gallery entries. */ -}}
+<div class="pdp__photos{{ if gt (len .) 3 }} pdp__photos--many{{ end }}">
+  {{- range . }}
+    {{- $g := . }}
+    {{- with resources.Get .src }}
+      {{- $t := (.Process "fill 800x600 Smart webp q80").Filter (images.UnsharpMask 0.5 0.7 0.02) }}
+      {{- $full := .Process "resize 1800x webp q82" }}
+  <figure class="shot">
+    <a href="{{ $full.RelPermalink }}" title="View the full photo">
+      <img src="{{ $t.RelPermalink }}" width="800" height="600" alt="{{ $g.caption | default "" }}" loading="lazy" decoding="async">
+    </a>
+    {{- with $g.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+    {{- end }}
+  {{- end }}
+</div>

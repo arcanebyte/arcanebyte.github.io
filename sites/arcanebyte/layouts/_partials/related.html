@@ -1,0 +1,16 @@
+{{- /* "You may also like": up to four other products, the same group first,
+       products for sale before anything still in the workshop. */ -}}
+{{- $kits := (where .Site.RegularPages "Section" "products").ByWeight }}
+{{- $others := where $kits "RelPermalink" "!=" .RelPermalink }}
+{{- $pick := slice }}
+{{- range where (where $others "Params.group" .Params.group) "Params.status" nil }}{{ $pick = $pick | append . }}{{ end }}
+{{- range where (where $others "Params.group" "!=" .Params.group) "Params.status" nil }}{{ $pick = $pick | append . }}{{ end }}
+{{- range where $others "Params.status" "!=" nil }}{{ $pick = $pick | append . }}{{ end }}
+{{- with first 4 $pick }}
+<section class="wrap related" aria-labelledby="related-title">
+  <h2 id="related-title">You may also like</h2>
+  <ul class="grid">
+    {{- range . }}{{ partial "kit.html" . }}{{ end }}
+  </ul>
+</section>
+{{- end }}

@@ -1,0 +1,30 @@
+{{- /* One product tile: photo in a hairline frame, name, and one gray line
+       (what it fits, or its status). A printed label (label: true) shows
+       whole on a gray tile instead of cropped. */ -}}
+{{- $p := . }}
+<li class="item">
+  <a href="{{ $p.RelPermalink }}">
+    <div class="item__media{{ if $p.Params.label }} item__media--tile{{ end }}">
+      {{- with $p.Params.image }}
+        {{- with resources.Get . }}
+          {{- $how := cond $p.Params.label "fit" "fill" }}
+          {{- $x1 := (.Process (printf "%s 600x450 Smart webp q80" $how)).Filter (images.UnsharpMask 0.5 0.7 0.02) }}
+          {{- $x2 := (.Process (printf "%s 1200x900 Smart webp q72" $how)).Filter (images.UnsharpMask 0.5 0.6 0.02) }}
+      <img src="{{ $x1.RelPermalink }}"
+           srcset="{{ $x1.RelPermalink }} 600w, {{ $x2.RelPermalink }} 1200w"
+           sizes="(max-width: 900px) 50vw, 280px"
+           width="{{ $x1.Width }}" height="{{ $x1.Height }}" alt="" loading="lazy" decoding="async">
+        {{- end }}
+      {{- else }}
+      <span class="item__noplate">Photo to come</span>
+      {{- end }}
+    </div>
+    <p class="item__name">{{ $p.Title }}</p>
+    <p class="item__sub">
+      {{- with $p.Params.status }}{{ . }}{{ else }}
+        {{- with $p.Params.fits }}Fits {{ replaceRE "^Any " "any " . }}{{ end }}
+        {{- if not $p.Params.paypalID }} · Email to order{{ end }}
+      {{- end -}}
+    </p>
+  </a>
+</li>

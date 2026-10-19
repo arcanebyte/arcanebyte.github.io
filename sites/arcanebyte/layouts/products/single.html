@@ -1,0 +1,92 @@
+{{ define "main" }}
+{{- /* The lead photo: front-matter image, else the first gallery photo. The
+       thumbnail strip swaps it; the details column shows the rest. */}}
+{{- $heroSrc := .Params.image }}
+{{- if and (not $heroSrc) .Params.gallery }}{{ $heroSrc = (index .Params.gallery 0).src }}{{ end }}
+{{- $heroCaption := "" }}
+{{- range .Params.gallery }}{{ if eq .src $heroSrc }}{{ $heroCaption = .caption }}{{ end }}{{ end }}
+{{- $thumbs := gt (len (.Params.gallery | default slice)) 1 }}
+
+<div class="wrap pdp">
+  <div class="pdp__media">
+    <figure class="pdp__main shot{{ if .Params.label }} pdp__main--label{{ end }}">
+      {{- with and $heroSrc (resources.Get $heroSrc) }}
+        {{- $plate := (.Process "fit 1400x1400 webp q82").Filter (images.UnsharpMask 0.5 0.7 0.02) }}
+        {{- $full := .Process "resize 1800x webp q82" }}
+      <a id="pdp-link" href="{{ $full.RelPermalink }}" title="View the full photo">
+        <img id="pdp-main" src="{{ $plate.RelPermalink }}" width="{{ $plate.Width }}" height="{{ $plate.Height }}" alt="{{ $heroCaption | default $.Title }}" decoding="async" fetchpriority="high">
+      </a>
+      {{- else }}
+      <div class="pdp__noplate">Photo to come</div>
+      {{- end }}
+      {{- if or $heroCaption $thumbs }}<figcaption id="pdp-caption">{{ $heroCaption }}</figcaption>{{ end }}
+    </figure>
+
+    {{- if $thumbs }}
+    <ul class="pdp__thumbs" aria-label="Photos">
+      {{- range .Params.gallery }}
+        {{- $g := . }}
+        {{- with resources.Get .src }}
+          {{- $t := (.Process "fill 240x180 Smart webp q75").Filter (images.UnsharpMask 0.5 0.7 0.02) }}
+          {{- $plate := (.Process "fit 1400x1400 webp q82").Filter (images.UnsharpMask 0.5 0.7 0.02) }}
+          {{- $full := .Process "resize 1800x webp q82" }}
+      <li>
+        <a href="{{ $full.RelPermalink }}" data-src="{{ $plate.RelPermalink }}" data-caption="{{ $g.caption }}"{{ if eq $g.src $heroSrc }} aria-current="true"{{ end }} title="{{ $g.caption | default "View this photo" }}">
+          <img src="{{ $t.RelPermalink }}" width="240" height="180" alt="" loading="lazy" decoding="async">
+        </a>
+      </li>
+        {{- end }}
+      {{- end }}
+    </ul>
+    {{- end }}
+  </div>
+
+  <div class="pdp__info">
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.lede | default .Params.summary }}<p class="pdp__lede">{{ . }}</p>{{ end }}
+    {{ partial "buybox.html" . }}
+  </div>
+</div>
+
+{{- $rest := slice }}
+{{- range .Params.gallery }}{{ if ne .src $heroSrc }}{{ $rest = $rest | append . }}{{ end }}{{ end }}
+<div class="wrap pdp__details{{ if not $rest }} pdp__details--solo{{ end }}">
+  <div class="prose">
+    <h2>Product details</h2>
+    {{ .Content }}
+    {{- with .Params.specs }}
+    <h3>{{ if $.Params.status }}Planned features{{ else }}Features{{ end }}</h3>
+    <ul>
+      {{- range . }}<li>{{ . | markdownify }}</li>{{ end }}
+    </ul>
+    {{- end }}
+  </div>
+  {{- with $rest }}{{ partial "gallery.html" . }}{{ end }}
+</div>
+
+{{ partial "related.html" . }}
+
+{{- if $thumbs }}
+<script>
+  (function () {
+    var main = document.getElementById('pdp-main');
+    var link = document.getElementById('pdp-link');
+    var cap = document.getElementById('pdp-caption');
+    var thumbs = document.querySelectorAll('.pdp__thumbs a');
+    if (!main || !thumbs.length) return;
+    thumbs.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        main.removeAttribute('width'); main.removeAttribute('height');
+        main.src = a.dataset.src;
+        main.alt = a.dataset.caption || main.alt;
+        if (link) link.href = a.href;
+        if (cap) cap.textContent = a.dataset.caption || '';
+        thumbs.forEach(function (t) { t.removeAttribute('aria-current'); });
+        a.setAttribute('aria-current', 'true');
+      });
+    });
+  })();
+</script>
+{{- end }}
+{{ end }}
