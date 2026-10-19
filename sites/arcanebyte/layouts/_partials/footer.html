@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__cols">
+      <div>
+        <h2>ArcaneByte</h2>
+        {{- /* The About paragraph lives in content/_index.md. */}}
+        {{ .Site.Home.Content }}
+        <p>30-day returns and a 30-day warranty · <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+      </div>
+      <div>
+        <h2>Help and policies</h2>
+        <ul>
+          <li><a href="{{ "/purchase/" | relURL }}">Where to buy</a></li>
+          <li><a href="{{ "/faq/" | relURL }}">Returns &amp; warranty</a></li>
+          <li><a href="{{ "/faq/" | relURL }}">FAQ</a></li>
+          <li><a href="{{ "/contact/" | relURL }}">Contact</a></li>
+          {{- range .Site.Params.stores }}
+          <li><a href="{{ .url }}" rel="noopener">{{ .name }}</a></li>
+          {{- end }}
+          {{- range .Site.Params.social }}
+          <li><a href="{{ .url }}" rel="noopener">{{ .name }}</a></li>
+          {{- end }}
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">© {{ now.Year }}, ArcaneByte · {{ .Site.Params.location }}</div>
+  </div>
+</footer>

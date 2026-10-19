@@ -1,0 +1,50 @@
+{{- /* The buy column under the title. PayPal's widget renders its own name,
+       price, description and quantity, so this adds only what PayPal does
+       not say. */ -}}
+<div class="buy">
+  {{- with .Params.fits }}
+  <p class="buy__fits"><span>Fits</span> {{ . }}</p>
+  {{- end }}
+
+  {{- with .Params.paypalID }}
+  <div class="buy__cart">
+    <paypal-add-to-cart-button data-id="{{ . }}"></paypal-add-to-cart-button>
+  </div>
+  <script>
+    // cart.js is loaded blocking in <head>, so cartPaypal exists by now.
+    cartPaypal.AddToCart({ id: "{{ . }}" })
+  </script>
+    {{- with $.Params.variantNote }}<p class="buy__note">{{ . | markdownify }}</p>{{ end }}
+  {{- else with $.Params.status }}
+  <p class="buy__state">{{ . }}</p>
+  <p class="buy__note">Not for sale yet. Email us and we'll let you know when it's ready.</p>
+  <a class="btn btn--primary btn--block" href="mailto:{{ $.Site.Params.email }}?subject={{ $.Title }}">Email about {{ $.Title }}</a>
+  {{- else }}
+  <p class="buy__note">{{ with $.Params.unavailableNote }}{{ . | markdownify }}{{ else }}Not set up for direct checkout. Email us and we'll send an invoice.{{ end }}</p>
+  <a class="btn btn--primary btn--block" href="mailto:{{ $.Site.Params.email }}?subject={{ $.Title }}">Email to order</a>
+  {{- end }}
+
+  {{- with .Params.guide }}
+  <p class="buy__guide"><a href="{{ .url | relURL }}">{{ .name }}</a></p>
+  {{- end }}
+
+  {{- if not .Params.status }}
+  <ul class="perks">
+    <li>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7h11v9H3zM14 11h4l3 3v2h-7z"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg>
+      Ships from {{ .Site.Params.location }}
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 14l-4-4 4-4"/><path d="M5 10h9.5a4.5 4.5 0 0 1 0 9H11"/></svg>
+      30-day returns
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5.5c0 4.5-3 7.5-7 9.5-4-2-7-5-7-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      30-day warranty
+    </li>
+  </ul>
+  <p class="buy__stores">Also sold on
+    {{- range $i, $s := .Site.Params.stores }}{{ if $i }},{{ end }} <a href="{{ $s.url }}" rel="noopener">{{ $s.name }}</a>{{ end }}.
+  </p>
+  {{- end }}
+</div>

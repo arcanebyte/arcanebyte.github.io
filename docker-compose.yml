@@ -1,0 +1,32 @@
+services:
+  # Hugo build + nginx. Locally this is the whole stack; in production Caddy
+  # sits in front of it and this port is never reached from outside.
+  sites:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    image: arcanebyte-sites
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8090:80"   # arcanebyte.com, local preview
+
+  # TLS. Only started with `--profile prod`, so a local `docker compose up`
+  # never tries to fetch a certificate for arcanebyte.com.
+  caddy:
+    image: caddy:2-alpine
+    profiles: ["prod"]
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"   # HTTP/3
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data       # certificates and ACME account; keep across rebuilds
+      - caddy_config:/config
+    depends_on:
+      - sites
+
+volumes:
+  caddy_data:
+  caddy_config:

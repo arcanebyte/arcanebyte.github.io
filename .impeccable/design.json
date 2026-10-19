@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T00:00:00Z",
+  "title": "Design System: ArcaneByte",
+  "extensions": {
+    "colorMeta": {
+      "page-white": { "role": "neutral", "displayName": "Page White", "canonical": "#ffffff", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#121212", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#595959", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "line": { "role": "neutral", "displayName": "Line", "canonical": "#e5e5e5", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "tile-gray": { "role": "neutral", "displayName": "Tile Gray", "canonical": "#f3f3f3", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "tile-gray-press": { "role": "neutral", "displayName": "Tile Gray Press", "canonical": "#ebebeb", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "bar-black": { "role": "secondary", "displayName": "Bar Black", "canonical": "#000000", "tonalRamp": ["oklch(0% 0 0)", "oklch(14% 0 0)", "oklch(28% 0 0)", "oklch(42% 0 0)", "oklch(56% 0 0)", "oklch(70% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "bar-divider": { "role": "secondary", "displayName": "Bar Divider", "canonical": "#2a2a2a", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "photo-backing": { "role": "neutral", "displayName": "Photo Backing", "canonical": "#111111", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "navy": { "role": "secondary", "displayName": "Navy", "canonical": "#1f2a44", "tonalRamp": ["oklch(15% 0.05 268)", "oklch(26% 0.05 268)", "oklch(38% 0.05 268)", "oklch(49% 0.05 268)", "oklch(61% 0.05 268)", "oklch(72% 0.05 268)", "oklch(84% 0.05 268)", "oklch(95% 0.05 268)"] },
+      "action-blue": { "role": "primary", "displayName": "Action Blue", "canonical": "#2b5fd9", "tonalRamp": ["oklch(15% 0.18 265)", "oklch(26% 0.18 265)", "oklch(38% 0.18 265)", "oklch(49% 0.18 265)", "oklch(61% 0.18 265)", "oklch(72% 0.18 265)", "oklch(84% 0.18 265)", "oklch(95% 0.18 265)"] },
+      "action-blue-deep": { "role": "primary", "displayName": "Action Blue Deep", "canonical": "#244fb5", "tonalRamp": ["oklch(15% 0.18 265)", "oklch(26% 0.18 265)", "oklch(38% 0.18 265)", "oklch(49% 0.18 265)", "oklch(61% 0.18 265)", "oklch(72% 0.18 265)", "oklch(84% 0.18 265)", "oklch(95% 0.18 265)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page h1 on FAQ, Where to buy, and catalog pages. The hero fixes it at 2.5rem in white; the product title caps at 2.25rem." },
+      "headline": { "displayName": "Headline", "purpose": "Product group headings on the landing page." },
+      "title": { "displayName": "Title", "purpose": "Product details, You may also like, and h2 inside prose." },
+      "subtitle": { "displayName": "Subtitle", "purpose": "Bare h3; prose h3 steps down to 1.0625rem." },
+      "lede": { "displayName": "Lede", "purpose": "The line under a page h1, Ink Soft, 60ch." },
+      "body": { "displayName": "Body", "purpose": "Running text at 68ch, nav links, FAQ answers, notices." },
+      "label": { "displayName": "Label", "purpose": "Buttons. Tile names and the state line are the same weight at 0.875rem." },
+      "small": { "displayName": "Small", "purpose": "Fits lines, perks, captions, store links, Photo to come." },
+      "fine": { "displayName": "Fine", "purpose": "The footer base line." }
+    },
+    "shadows": [
+      { "name": "thumb-current", "value": "inset 0 0 0 1px var(--ink)", "purpose": "Thickens the current product thumbnail's frame to 2px without changing its size. The only box-shadow on the site; it is a border, not an elevation." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.2, .7, .2, 1)", "purpose": "The one easing curve for every transition." },
+      { "name": "duration-fill", "value": "120ms", "purpose": "Button fills, store row fills, thumbnail frame color." },
+      { "name": "duration-nav", "value": "140ms", "purpose": "Nav underline and the hamburger's middle stroke." },
+      { "name": "duration-chevron", "value": "180ms", "purpose": "FAQ chevron rotation." }
+    ],
+    "breakpoints": [
+      { "name": "gallery-two-up", "value": "600px" },
+      { "name": "stores-two-up", "value": "640px" },
+      { "name": "nav-collapse", "value": "760px" },
+      { "name": "collapse", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Action Blue button for the buy column's email action; the only blue surface on the site.",
+      "html": "<a class=\"ds-btn ds-btn--primary\" href=\"#\">Email about LisaBoost</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5ch; font: 500 0.9375rem/1.2 var(--font, Inter, system-ui, sans-serif); padding: 0.75rem 1.875rem; border-radius: var(--radius, 4px); border: 1px solid var(--ink, #121212); background: var(--bg, #fff); color: var(--ink, #121212); text-decoration: none; cursor: pointer; white-space: nowrap; transition: background-color 120ms cubic-bezier(.2,.7,.2,1), border-color 120ms cubic-bezier(.2,.7,.2,1), color 120ms cubic-bezier(.2,.7,.2,1); } .ds-btn:hover { background: var(--tile-2, #ebebeb); } .ds-btn:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; } .ds-btn--primary { background: var(--blue, #2b5fd9); border-color: var(--blue, #2b5fd9); color: #fff; } .ds-btn--primary:hover { background: var(--blue-2, #244fb5); border-color: var(--blue-2, #244fb5); color: #fff; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White button with an ink border; the default for any page that needs one.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Where to buy</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5ch; font: 500 0.9375rem/1.2 var(--font, Inter, system-ui, sans-serif); padding: 0.75rem 1.875rem; border-radius: var(--radius, 4px); border: 1px solid var(--ink, #121212); background: var(--bg, #fff); color: var(--ink, #121212); text-decoration: none; cursor: pointer; white-space: nowrap; transition: background-color 120ms cubic-bezier(.2,.7,.2,1); } .ds-btn:hover { background: var(--tile-2, #ebebeb); } .ds-btn:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Hero Panel",
+      "kind": "custom",
+      "refersTo": "hero-panel",
+      "description": "Navy panel with the headline, one line, and the white button; sits beside the lead photo.",
+      "html": "<div class=\"ds-hero\"><h1>Goodies for machines nobody supports.</h1><p>Hand-built adapters, modems, and drive emulators for the Apple Lisa, Macintosh XL, and Apple ///.</p><a class=\"ds-hero__btn\" href=\"#\">See the products</a></div>",
+      "css": ".ds-hero { background: var(--navy, #1f2a44); color: #fff; padding: 3.5rem 3.25rem; border-radius: var(--radius, 4px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; max-width: 560px; font-family: var(--font, Inter, system-ui, sans-serif); } .ds-hero h1 { margin: 0; font-size: 2.5rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; max-width: 14ch; } .ds-hero p { margin: 1.125rem 0 0; font-size: 0.9375rem; line-height: 1.6; max-width: 42ch; color: rgba(255,255,255,.92); } .ds-hero__btn { display: inline-flex; margin-top: 1.875rem; font: 500 0.9375rem/1.2 inherit; font-family: inherit; padding: 0.75rem 1.875rem; border-radius: var(--radius, 4px); border: 1px solid #fff; background: #fff; color: var(--ink, #121212); text-decoration: none; transition: background-color 120ms cubic-bezier(.2,.7,.2,1), border-color 120ms cubic-bezier(.2,.7,.2,1); } .ds-hero__btn:hover { background: var(--tile-2, #ebebeb); border-color: var(--tile-2, #ebebeb); } .ds-hero__btn:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; } .ds-hero ::selection { background: #fff; color: var(--navy, #1f2a44); }"
+    },
+    {
+      "name": "Header Bar",
+      "kind": "nav",
+      "refersTo": "header-bar",
+      "description": "Black bar with the floppy mark, the wordmark, and white nav links underlined when current.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-bar__brand\" href=\"#\"><svg viewBox=\"0 0 40 40\" aria-hidden=\"true\"><g transform=\"rotate(-45 20 20)\"><path d=\"M7 8.5A1.5 1.5 0 0 1 8.5 7h20l4.5 4.5v20a1.5 1.5 0 0 1-1.5 1.5h-23A1.5 1.5 0 0 1 7 31.5z\" fill=\"#fff\"/><rect x=\"12.5\" y=\"9\" width=\"12\" height=\"7\" fill=\"#000\"/><rect x=\"19.5\" y=\"10.5\" width=\"3\" height=\"4\" fill=\"#fff\"/><circle cx=\"20\" cy=\"24\" r=\"5\" fill=\"#000\"/><circle cx=\"20\" cy=\"24\" r=\"2\" fill=\"#fff\"/></g></svg><span>ArcaneByte</span></a><nav class=\"ds-bar__nav\"><a href=\"#\" aria-current=\"page\">Catalog</a><a href=\"#\">Where to buy</a><a href=\"#\">FAQ</a><a href=\"#\">Contact</a></nav></header>",
+      "css": ".ds-bar { display: flex; align-items: center; gap: 2.25rem; height: 76px; padding: 0 2rem; background: var(--bar, #000); color: #fff; font-family: var(--font, Inter, system-ui, sans-serif); } .ds-bar__brand { display: inline-flex; align-items: center; gap: 0.625rem; color: #fff; font-weight: 700; font-size: 1.625rem; letter-spacing: -0.02em; line-height: 1; text-decoration: none; white-space: nowrap; } .ds-bar__brand svg { width: 2rem; height: 2rem; } .ds-bar__nav { display: flex; gap: 1.5rem; } .ds-bar__nav a { color: #fff; font-size: 0.9375rem; padding: 0.375rem 0; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 140ms cubic-bezier(.2,.7,.2,1); } .ds-bar__nav a:hover { border-bottom-color: rgba(255,255,255,.5); } .ds-bar__nav a[aria-current] { border-bottom-color: #fff; } .ds-bar a:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Product Tile",
+      "kind": "card",
+      "refersTo": "product-tile-photo",
+      "description": "Borderless link block: a 4:3 photo in a hairline frame on near-black, the name, and one gray line. The label variant shows a printed label whole on a gray tile with an In development line.",
+      "html": "<div class=\"ds-tiles\"><a class=\"ds-tile\" href=\"#\"><div class=\"ds-tile__media\"><span class=\"ds-tile__noplate\">Photo to come</span></div><p class=\"ds-tile__name\">adb2lisa</p><p class=\"ds-tile__sub\">Fits Apple Lisa, Macintosh XL</p></a><a class=\"ds-tile\" href=\"#\"><div class=\"ds-tile__media ds-tile__media--label\"><svg viewBox=\"0 0 160 100\" width=\"100%\" aria-hidden=\"true\"><rect width=\"160\" height=\"100\" fill=\"#e9e4d6\"/><rect width=\"160\" height=\"22\" fill=\"#7a2a5e\"/><rect x=\"12\" y=\"34\" width=\"90\" height=\"8\" fill=\"#7a2a5e\"/><rect x=\"12\" y=\"48\" width=\"120\" height=\"8\" fill=\"#7a2a5e\"/><rect x=\"12\" y=\"72\" width=\"60\" height=\"4\" fill=\"#7a2a5e\"/></svg></div><p class=\"ds-tile__name\">LisaBoost</p><p class=\"ds-tile__sub\">In development</p></a></div>",
+      "css": ".ds-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 2.25rem 1.25rem; max-width: 600px; font-family: var(--font, Inter, system-ui, sans-serif); } .ds-tile { display: block; color: var(--ink, #121212); text-decoration: none; } .ds-tile__media { aspect-ratio: 4 / 3; border: 1px solid var(--line, #e5e5e5); border-radius: var(--radius, 4px); overflow: hidden; background: #111; display: grid; place-items: center; } .ds-tile__media--label { background: var(--tile, #f3f3f3); border-color: var(--tile, #f3f3f3); padding: 10%; } .ds-tile__media--label svg { border-radius: 3px; } .ds-tile__noplate { font-size: 0.875rem; color: #fff; } .ds-tile__name { margin: 0.75rem 0 0; font-size: 0.875rem; font-weight: 500; line-height: 1.4; } .ds-tile:hover .ds-tile__name { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; } .ds-tile__sub { margin: 0.25rem 0 0; font-size: 0.8125rem; line-height: 1.6; color: var(--ink-2, #595959); } .ds-tile:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Buy Column",
+      "kind": "custom",
+      "refersTo": "buy-column",
+      "description": "The stack under a product's lede, shown in its In development state: Fits row, state dot, note, full-width primary button. For-sale products put PayPal's widget here above a rule and three perks.",
+      "html": "<div class=\"ds-buy\"><p class=\"ds-buy__fits\"><span>Fits</span> Apple Lisa</p><p class=\"ds-buy__state\">In development</p><p class=\"ds-buy__note\">Not for sale yet. Email us and we'll let you know when it's ready.</p><a class=\"ds-buy__btn\" href=\"#\">Email about LisaBoost</a><ul class=\"ds-perks\"><li><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 7h11v9H3zM14 11h4l3 3v2h-7z\"/><circle cx=\"7\" cy=\"17.5\" r=\"1.5\"/><circle cx=\"17\" cy=\"17.5\" r=\"1.5\"/></svg>Ships from San Antonio, Texas</li><li><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 14l-4-4 4-4\"/><path d=\"M5 10h9.5a4.5 4.5 0 0 1 0 9H11\"/></svg>30-day returns</li><li><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l7 3v5.5c0 4.5-3 7.5-7 9.5-4-2-7-5-7-9.5V6z\"/><path d=\"M9 12l2 2 4-4\"/></svg>30-day warranty</li></ul></div>",
+      "css": ".ds-buy { display: grid; gap: 1rem; max-width: 360px; font-family: var(--font, Inter, system-ui, sans-serif); color: var(--ink, #121212); line-height: 1.6; } .ds-buy > * { margin: 0; } .ds-buy__fits { font-size: 0.875rem; color: var(--ink-2, #595959); } .ds-buy__fits span { color: var(--ink, #121212); font-weight: 600; } .ds-buy__state { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 500; justify-self: start; } .ds-buy__state::before { content: \"\"; width: 8px; height: 8px; border-radius: 50%; background: var(--ink-2, #595959); } .ds-buy__note { font-size: 0.9375rem; color: var(--ink-2, #595959); } .ds-buy__btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; font: 500 0.9375rem/1.2 inherit; font-family: inherit; padding: 0.75rem 1.875rem; border-radius: var(--radius, 4px); border: 1px solid var(--blue, #2b5fd9); background: var(--blue, #2b5fd9); color: #fff; text-decoration: none; transition: background-color 120ms cubic-bezier(.2,.7,.2,1), border-color 120ms cubic-bezier(.2,.7,.2,1); } .ds-buy__btn:hover { background: var(--blue-2, #244fb5); border-color: var(--blue-2, #244fb5); } .ds-buy__btn:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; } .ds-perks { list-style: none; margin: 0; padding: 1rem 0 0; border-top: 1px solid var(--line, #e5e5e5); display: grid; gap: 0.6rem; font-size: 0.875rem; } .ds-perks li { display: flex; align-items: center; gap: 0.6rem; } .ds-perks svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--ink, #121212); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Store Row",
+      "kind": "card",
+      "refersTo": "store-row",
+      "description": "Hairline-bordered row with a 28px marketplace icon, the store name, and a gray line. Hover fills Tile Gray.",
+      "html": "<a class=\"ds-store\" href=\"#\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" aria-hidden=\"true\"><rect x=\"2\" y=\"8\" width=\"24\" height=\"12\" rx=\"2\" fill=\"#e53238\"/></svg><span><strong>eBay</strong><span>Our eBay store</span></span></a>",
+      "css": ".ds-store { display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem; border: 1px solid var(--line, #e5e5e5); border-radius: var(--radius, 4px); color: var(--ink, #121212); text-decoration: none; max-width: 420px; font-family: var(--font, Inter, system-ui, sans-serif); font-size: 0.9375rem; line-height: 1.6; transition: background-color 120ms cubic-bezier(.2,.7,.2,1); } .ds-store:hover { background: var(--tile, #f3f3f3); } .ds-store svg { flex: none; } .ds-store > span { display: flex; flex-direction: column; } .ds-store strong { font-weight: 600; } .ds-store span span { font-size: 0.875rem; color: var(--ink-2, #595959); } .ds-store:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "FAQ Row",
+      "kind": "custom",
+      "refersTo": "faq",
+      "description": "Hairline-bounded details row with a drawn ink chevron that turns up on open.",
+      "html": "<div class=\"ds-faq\"><details><summary>How do I return my product?</summary><div><p>Email us within 30 days of delivery and we'll send instructions.</p></div></details><details><summary>How long does shipping take?</summary><div><p>Orders ship from San Antonio, Texas, within a few days.</p></div></details></div>",
+      "css": ".ds-faq { max-width: 68ch; border-top: 1px solid var(--line, #e5e5e5); font-family: var(--font, Inter, system-ui, sans-serif); font-size: 0.9375rem; color: var(--ink, #121212); line-height: 1.6; } .ds-faq details { border-bottom: 1px solid var(--line, #e5e5e5); } .ds-faq summary { cursor: pointer; list-style: none; position: relative; padding: 1rem 2.75rem 1rem 0; font-weight: 600; font-size: 1rem; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq summary::after { content: \"\"; position: absolute; right: 0.5rem; top: 1.2rem; width: 0.55rem; height: 0.55rem; border-right: 1.5px solid var(--ink, #121212); border-bottom: 1.5px solid var(--ink, #121212); transform: rotate(45deg); transition: transform 180ms cubic-bezier(.2,.7,.2,1); } .ds-faq details[open] summary::after { transform: rotate(225deg); top: 1.45rem; } .ds-faq details > div { padding-bottom: 1.25rem; color: var(--ink-2, #595959); } .ds-faq details > div p { margin: 0; } .ds-faq summary:focus-visible { outline: 2px solid var(--blue, #2b5fd9); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Notice",
+      "kind": "custom",
+      "refersTo": "notice",
+      "description": "Tile Gray aside inside prose.",
+      "html": "<div class=\"ds-notice\"><p>The WiFiModem ships with a quick-start guide; the PDF is linked from the product page.</p></div>",
+      "css": ".ds-notice { background: var(--tile, #f3f3f3); border-radius: var(--radius, 4px); padding: 1rem 1.15rem; max-width: 60ch; font-family: var(--font, Inter, system-ui, sans-serif); font-size: 0.9375rem; line-height: 1.55; color: var(--ink-2, #595959); } .ds-notice p { margin: 0; } .ds-notice p + p { margin-top: 0.6rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Parts Counter",
+    "overview": "ArcaneByte looks like a small hardware maker's shop and nothing else: a black bar with the floppy mark and the wordmark, a navy panel beside the lead photo, and the goods laid out in 4-up rows on a white page. The owner's reference is shop.bigmessowires.com, and the refusal is any costume. There is no theme, no period chrome, no section the landing page does not need. The landing page is the hero and the product groups, by the owner's decision, and everything else (About, ordering notes, policies) waits in the footer or on its own page.\n\nThe page is flat and quiet. Corners are 4px everywhere, photos sit in a 1px hairline frame on near-black backing, printed labels for unbuilt products sit whole on a light gray tile, and nothing casts a shadow at any state. The only color the site adds is the black bar, the navy hero panel, and one blue for a primary button; the boards in the photographs supply everything else. Inter is the single face, 700 for headings, 500 for buttons and tile names, 400 for text, and nothing is set in caps or tracked out.\n\nDensity is a shop's, not a magazine's: body text runs at 15px, tile names at 14px, and the product page puts the title, fit line, PayPal's own widget, and three perks in one column beside the photo. PayPal prints its own title, price, and description inside the buy column, so the site adds only what PayPal does not say, and no price appears anywhere else on the site.",
+    "keyCharacteristics": [
+      "Black header bar, navy hero panel, white page, light gray footer; 4px corners throughout",
+      "One blue (`action-blue`) for the primary button and link hover; the bar and the navy are the only other color",
+      "Inter is the only face; 700 headings at −0.02em, 500 labels, 400 text; no caps, no tracking, no eyebrows",
+      "Flat at every state: no shadow, no lift, no blur; hover is a fill change or an underline",
+      "Photos cropped 4:3 in a hairline frame on near-black; printed labels shown whole on a gray tile",
+      "The landing page is the hero and the product groups, grouped by what the product is for"
+    ],
+    "rules": [
+      { "name": "The One Blue Rule", "body": "Blue is the primary button's fill and a link's hover color, nowhere else. Links at rest are ink, underlined. Tiles, borders, icons, the state dot, and the FAQ chevron are ink or gray. PayPal's yellow \"Add to Cart\" is PayPal's widget, outside the system; nothing on the site echoes it.", "section": "colors" },
+      { "name": "The Three Colors Rule", "body": "The site adds exactly three colors to a white page: the black bar, the navy hero panel, and the blue button. Every other surface is white or a gray. A new surface is white, or Tile Gray if it is a tile, a notice, or the footer.", "section": "colors" },
+      { "name": "The Photo Carries the Color Rule", "body": "The red, white, black, and green boards are the color on the page. Photos are shown in true color, never tinted, faded, or duotoned, and the backing behind them is near-black so the boards read as the photographed objects.", "section": "colors" },
+      { "name": "The Sentence Case Rule", "body": "No uppercase labels, no letter-spaced labels, no eyebrow or kicker above a heading. A heading says what it introduces.", "section": "typography" },
+      { "name": "The Two Weights Rule", "body": "Headings and footer column titles are 700; buttons, tile names, nav, and the state line are 500; everything else is 400. 600 appears only where a word is picked out inside running text (the \"Fits\" label, `strong`, store names, the FAQ question).", "section": "typography" },
+      { "name": "The Four Across Rule", "body": "Products print four to a row and two on phones, every tile the same width, and a group with fewer than four leaves the rest of the row empty. A third group is one more `[[params.catalog]]` entry and nothing else.", "section": "layout" },
+      { "name": "The Landing Page Rule", "body": "The landing page is the hero and the product groups. About, ordering notes, policies, and store links live in the footer and on their own pages.", "section": "layout" },
+      { "name": "The Nothing Floats Rule", "body": "No `box-shadow` (except that inset frame), no `filter`, no `backdrop-filter`, no `transform` on hover. If a surface needs to read as separate, give it a 1px `line` border or a Tile Gray fill.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep blue to the primary button's fill and a link's hover (The One Blue Rule); make every other control white, Ink, or gray.",
+      "Do put new content on white; use Tile Gray only for a tile, a notice, a code block, or the footer.",
+      "Do use 4px corners on everything, 3px on something nested inside a 4px parent, and 1px `line` frames on every photo.",
+      "Do print products four across, two on phones, and leave a short row's empty columns empty.",
+      "Do give a product that is not built a `status` in front matter; the second row in its group, the \"In development\" line, the state dot, the email button, and the \"Planned features\" heading follow from it.",
+      "Do set `label: true` on a product whose only image is its printed label, so the label shows whole on a gray tile.",
+      "Do let PayPal's widget print the name, price, and description, and add only what it does not say.",
+      "Do show photos in true color on near-black backing, cropped 4:3 in tiles and whole on the product plate.",
+      "Do write in American English (catalog, color)."
+    ],
+    "donts": [
+      "Don't add a second face, a condensed cut, or a monospace label; Inter at normal width is the only type on the site.",
+      "Don't set an uppercase or letter-spaced label, or put an eyebrow or kicker above a heading.",
+      "Don't cast a shadow, lift, blur, or scale anything at any state; hover is a fill, an underline, or a border color.",
+      "Don't add a section to the landing page; it is the hero and the product groups.",
+      "Don't publish a price anywhere outside PayPal's widget, and don't invent reviews, counts, or sales figures.",
+      "Don't reach for PayPal's yellow or any retro or themed treatment (rules, hatching, typewriter type, period chrome).",
+      "Don't make the header sticky or translucent; it is a black bar in normal flow."
+    ]
+  }
+}

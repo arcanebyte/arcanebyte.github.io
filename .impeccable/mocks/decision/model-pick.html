@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Lisa Office System</title>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;width:1440px;height:900px;overflow:hidden;color:#000;font-family:Geneva,Verdana,sans-serif;font-size:15px;
+ background:#fff;background-image:repeating-conic-gradient(#000 0 25%,#fff 0 50%);background-size:4px 4px;image-rendering:pixelated}
+.menubar{position:absolute;top:0;left:0;right:0;height:38px;background:#fff;border-bottom:2px solid #000;display:flex;align-items:center;gap:40px;padding:0 24px;font-family:"Pixelify Sans";font-size:22px}
+.menubar b{font-weight:700}
+.win{position:absolute;background:#fff;border:2px solid #000;box-shadow:4px 4px 0 #000}
+.tab{position:absolute;top:-34px;left:-2px;height:34px;padding:0 22px;background:#fff;border:2px solid #000;border-bottom:0;font-family:"Pixelify Sans";font-size:21px;line-height:30px}
+.tab::before{content:"";position:absolute;left:-2px;right:-2px;bottom:-2px;height:2px;background:#fff}
+.scroll{position:absolute;top:0;right:0;bottom:0;width:22px;border-left:2px solid #000;background-image:repeating-conic-gradient(#000 0 25%,#fff 0 50%);background-size:4px 4px}
+.scroll i{display:block;height:22px;border-bottom:2px solid #000;background:#fff}
+.scroll i:last-child{position:absolute;bottom:0;width:100%;border-top:2px solid #000;border-bottom:0}
+.hbar{position:absolute;left:0;right:22px;bottom:0;height:22px;border-top:2px solid #000;background-image:repeating-conic-gradient(#000 0 25%,#fff 0 50%);background-size:4px 4px}
+.inner{padding:18px 44px 18px 18px;height:100%}
+.drawer{font-family:"Pixelify Sans";font-size:20px;margin:10px 0 6px;padding-bottom:2px;border-bottom:2px solid #000}
+.doc{display:flex;align-items:center;gap:12px;padding:5px 6px;font-size:15px}
+.doc.sel{background:#000;color:#fff}
+.doc i{width:22px;height:28px;border:2px solid currentColor;display:inline-block;position:relative;background:#fff}
+.doc.sel i{background:#000}
+.doc i::after{content:"";position:absolute;right:-2px;top:-2px;width:8px;height:8px;background:#fff;border-left:2px solid currentColor;border-bottom:2px solid currentColor}
+.doc.sel i::after{background:#000}
+h1{font-family:"Pixelify Sans";font-weight:700;font-size:46px;line-height:1;margin:0 0 14px}
+.btn{display:inline-block;border:2px solid #000;border-radius:12px;padding:8px 22px;margin:14px 10px 0 0;font-family:"Pixelify Sans";font-size:20px;background:#fff}
+.btn.def{box-shadow:0 0 0 2px #fff,0 0 0 4px #000}
+.pic{border:2px solid #000;width:420px;height:315px;object-fit:cover;float:right;margin:0 0 14px 20px}
+.fits{font-family:"Pixelify Sans";font-size:19px;margin:0 0 8px}
+.desk{position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;font-family:"Pixelify Sans";font-size:17px;background:#fff;padding:4px 8px;border:2px solid #000}
+.desk span{width:44px;height:40px;border:2px solid #000;background:#fff}
+</style></head><body>
+<div class="menubar"><b>ArcaneByte</b><span>File/Print</span><span>Edit</span><span>Catalog</span><span>Fits</span><span>Order</span><span>Help</span></div>
+<div class="win" style="left:40px;top:120px;width:380px;height:720px"><div class="tab">Catalog</div>
+ <div class="inner">
+  <div class="drawer">Keyboard adapters</div>
+  <div class="doc sel"><i></i>adb2lisa</div><div class="doc"><i></i>mac2lisa</div><div class="doc"><i></i>usb2lisa</div>
+  <div class="drawer">Modems</div>
+  <div class="doc"><i></i>WiFiModem</div><div class="doc"><i></i>WiFiModem32</div>
+  <div class="drawer">Hard drive emulators</div>
+  <div class="doc"><i></i>Apple Parallel Hard Drive Emulator</div>
+  <div class="drawer">In the workshop</div>
+  <div class="doc"><i></i>LisaBoost</div><div class="doc"><i></i>Apple IIe Card</div><div class="doc"><i></i>LisaColor</div><div class="doc"><i></i>LisaLink</div>
+ </div><div class="scroll"><i></i><i></i></div><div class="hbar"></div></div>
+<div class="win" style="left:470px;top:120px;width:860px;height:600px"><div class="tab">adb2lisa</div>
+ <div class="inner">
+  <img class="pic" src="file:///Users/jdenton/github/arcanebyte.github.io/sites/arcanebyte/assets/img/products/adb2lisa/adb2lisa1.jpg" alt="">
+  <h1>Goodies for machines nobody supports.</h1>
+  <p class="fits">Fits: Apple Lisa, Macintosh XL</p>
+  <p>Connects Apple Desktop Bus (ADB) keyboards to the Apple Lisa and Macintosh XL. No external power. Supports US, UK, DE, and FR layouts. Comes with the adapter and a keyboard cable, built and tested in San Antonio, Texas.</p>
+  <p>Choose red, white, or black at checkout. 30-day returns and warranty.</p>
+  <span class="btn def">Order</span><span class="btn">Where to buy</span><span class="btn">Photos</span>
+ </div><div class="scroll"><i></i><i></i></div><div class="hbar"></div></div>
+<div class="desk" style="right:40px;top:760px"><span></span>Wastebasket</div>
+<div class="desk" style="right:200px;top:760px"><span></span>Clipboard</div>
+</body></html>

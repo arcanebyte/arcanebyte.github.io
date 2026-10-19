@@ -1,0 +1,130 @@
+{
+  "title": "Alternative designs for arcanebyte.com",
+  "question": "Five alternatives to the storefront, each built from the real products. The BMOW-style shop is new this round. Pick one to build, or keep the storefront. Steer with a line if something is close but not right.",
+  "options": [
+    {
+      "id": "shop",
+      "label": "The BMOW-style shop",
+      "lineage": "shop.bigmessowires.com, a Shopify store on the Dawn theme",
+      "thesis": "The familiar Shopify shop, built straight: black header bar, split hero with a navy panel, a 4-up featured grid, about section, gray footer.",
+      "palette": [
+        "#ffffff",
+        "#000000",
+        "#1f2a44",
+        "#2b5fd9"
+      ],
+      "materials": [
+        "black header bar",
+        "navy hero panel",
+        "4-up product grid"
+      ],
+      "viewport": "A black bar with the floppy mark and the ArcaneByte wordmark in white, nav and a cart icon; under it a split hero, the adb2lisa pair at left and a navy panel at right with the white headline and a white button; then \"Featured products\" as a 4-up grid.",
+      "risk": "It is the one direction that is meant to look like a store you have seen before. Without prices under the names the grid reads slightly emptier than BMOW's.",
+      "comp": ".impeccable/mocks/round2/shop.png"
+    },
+    {
+      "id": "catalog",
+      "label": "The parts catalog",
+      "lineage": "Jameco and Digi-Key mail-order catalog pages",
+      "thesis": "The shop as a catalog page: products are rows with a model column and an Order button, not cards in a grid.",
+      "palette": [
+        "#f4f0e8",
+        "#161412",
+        "#b8261f",
+        "#cfc8bb"
+      ],
+      "materials": [
+        "warm paper",
+        "heavy rules",
+        "text serif body"
+      ],
+      "viewport": "A masthead on a thick rule, catalog front matter at left with the headline and the About paragraph, the adb2lisa pair at right with a caption, then a machine index table and the first product rows.",
+      "risk": "It is the most text-forward of the four. If the rows get wordy it tips back into the crowded feel you flagged.",
+      "comp": ".impeccable/mocks/round2/catalog.png"
+    },
+    {
+      "id": "bench",
+      "label": "The workbench",
+      "lineage": "a maker's bench under one lamp",
+      "thesis": "Nearly every board was photographed on black leatherette, so the page becomes the bench: a dark ground the boards float on, with no frames.",
+      "palette": [
+        "#151516",
+        "#f2f0eb",
+        "#d9c9a3",
+        "#1f1f21"
+      ],
+      "materials": [
+        "charcoal ground",
+        "Lisa beige accent",
+        "unframed photos"
+      ],
+      "viewport": "A split hero on the charcoal ground: three-line white headline and beige button at left, the adb2lisa boards at right bleeding off the page edge so their black leatherette meets the ground. Then four hairline machine columns and the adapters at large scale, unframed.",
+      "risk": "Dark pages are a clich\u00e9 when they glow. This one stays matte, but the four cream workshop labels and any white product shots need a panel to sit on.",
+      "comp": ".impeccable/mocks/round2/bench.png"
+    },
+    {
+      "id": "lineup",
+      "label": "The lineup",
+      "lineage": "apple.com product family pages",
+      "thesis": "The homepage is a scroll through the lineup: everything centered, no cards or boxes, each group a full-width band with its products in a row at equal scale.",
+      "palette": [
+        "#ffffff",
+        "#1d1d1f",
+        "#0066cc",
+        "#f5f5f7"
+      ],
+      "materials": [
+        "white and light gray bands",
+        "one huge centered photo",
+        "chevron text links"
+      ],
+      "viewport": "A centered 72px headline, the lede, one blue button, and under it one very large adb2lisa photo. Nothing else above the fold.",
+      "risk": "It is the closest of the four to the storefront you have now, and the one that most depends on matched product photography to look right.",
+      "comp": ".impeccable/mocks/round2/lineup.png"
+    },
+    {
+      "id": "journal",
+      "label": "The magazine",
+      "lineage": "early-1980s computing magazines, laid out with today's restraint",
+      "thesis": "The shop reads like a feature section: serif display type, cream paper, one red, and photos that bleed off the page edge.",
+      "palette": [
+        "#faf6ee",
+        "#1b1a17",
+        "#c8102e",
+        "#d8d1c3"
+      ],
+      "materials": [
+        "cream paper",
+        "Fraunces serif display",
+        "2px ink rules"
+      ],
+      "viewport": "An 80px serif headline at left with the red button, the adb2lisa pair bleeding off the right edge and below the fold, then a machine index strip between hairlines.",
+      "risk": "Serif-on-cream is also the house style of editorial website templates. It stays yours only if the photos and the rules do the work, not the type alone.",
+      "comp": ".impeccable/mocks/round2/journal.png"
+    },
+    {
+      "id": "storefront",
+      "label": "Keep the storefront",
+      "lineage": "what is live at localhost:1313 now",
+      "thesis": "The conventional shop at full craft: gray hero panel, machine tiles, count-shaped product grids, a buy card on every product page.",
+      "palette": [
+        "#ffffff",
+        "#f5f5f7",
+        "#1d1d1f",
+        "#0b5fd6"
+      ],
+      "materials": [
+        "white page",
+        "18px gray panels",
+        "hover-only shadows"
+      ],
+      "viewport": "The gray hero panel with the headline and the adb2lisa pair, then the four machine tiles.",
+      "risk": "It is the shape every small hardware shop ships, which is the point and the limit.",
+      "comp": ".impeccable/mocks/round2/storefront.png"
+    }
+  ],
+  "reroll": true,
+  "canon": false,
+  "steer": true,
+  "outcome": "reroll with steer: landing page busy; see payload-round3.json"
+}

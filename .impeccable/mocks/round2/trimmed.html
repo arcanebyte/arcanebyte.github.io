@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArcaneByte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --ink: #121212;
+  --ink-2: #595959;
+  --line: #e5e5e5;
+  --tile: #f3f3f3;
+  --bar: #000000;
+  --navy: #1f2a44;
+  --blue: #2b5fd9;
+  --blue-2: #244fb5;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --page: 1180px;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--navy); color: #fff; }
+a { color: inherit; text-decoration: none; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+.wrap { width: 100%; max-width: var(--page); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Each product group is one .section: a heading, an optional note, and one
+   or more 4-up rows. A third group later is another .section, nothing else. */
+.section { padding-block: 56px 0; }
+.section h2 { font-size: 36px; }
+.section__note { margin-top: 6px; color: var(--ink-2); max-width: 60ch; }
+.section .grid { margin-top: 24px; }
+.section .grid + .grid { margin-top: 36px; }
+
+/* ---------- header ---------- */
+.bar { background: var(--bar); color: #fff; }
+.bar__inner { display: flex; align-items: center; gap: 36px; height: 76px; }
+.logo { display: inline-flex; align-items: center; gap: 10px; color: #fff; font-weight: 700; font-size: 26px; letter-spacing: -0.02em; white-space: nowrap; }
+.logo:hover { text-decoration: none; }
+.logo svg { width: 32px; height: 32px; flex: none; }
+.nav { display: flex; gap: 24px; margin-right: auto; }
+.nav a { color: #fff; font-size: 15px; padding: 6px 0; border-bottom: 1px solid transparent; }
+.nav a:hover { text-decoration: none; border-bottom-color: rgba(255,255,255,.5); }
+.nav a[aria-current] { border-bottom-color: #fff; }
+.icons { display: flex; gap: 20px; }
+.icons a, .menu-btn { color: #fff; display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; }
+.icons svg, .menu-btn svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.menu-btn { display: none; background: none; border: 0; padding: 0; cursor: pointer; }
+
+/* ---------- hero ---------- */
+.hero { padding-top: 36px; }
+.hero__box { display: grid; grid-template-columns: 1fr 1fr; border-radius: 4px; overflow: hidden; min-height: 460px; }
+.hero__photo { background: #111; }
+.hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
+.hero__panel { background: var(--navy); color: #fff; padding: 56px 52px; display: flex; flex-direction: column; justify-content: center; }
+.hero__panel h1 { font-size: 40px; color: #fff; max-width: 14ch; }
+.hero__panel p { margin-top: 18px; font-size: 15px; line-height: 1.6; max-width: 42ch; color: rgba(255,255,255,.92); }
+.btn { display: inline-block; font-weight: 500; font-size: 15px; padding: 12px 30px; border-radius: 2px; border: 1px solid transparent; white-space: nowrap; transition: background-color 120ms ease, color 120ms ease; }
+.btn:hover { text-decoration: none; }
+.btn--white { background: #fff; color: var(--ink); border-color: #fff; margin-top: 30px; align-self: flex-start; }
+.btn--white:hover { background: #ebebeb; border-color: #ebebeb; }
+
+/* ---------- product grids ---------- */
+.grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 36px 20px; grid-template-columns: repeat(4, 1fr); }
+.item a { display: block; }
+.item a:hover { text-decoration: none; }
+.item a:hover .item__name { text-decoration: underline; }
+.item__media { aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: #111; }
+.item__media img { width: 100%; height: 100%; object-fit: cover; }
+.item__media--tile { background: var(--tile); border-color: var(--tile); display: grid; place-items: center; padding: 10%; }
+.item__media--tile img { height: auto; object-fit: contain; border-radius: 3px; }
+.item__name { margin-top: 12px; font-size: 14px; font-weight: 500; line-height: 1.4; }
+.item__sub { margin-top: 4px; font-size: 13px; color: var(--ink-2); }
+
+/* ---------- footer ---------- */
+.footer { margin-top: 72px; background: var(--tile); padding: 48px 0 28px; }
+.footer__cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+.footer h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+.footer p { max-width: 44ch; }
+.footer p a { text-decoration: underline; }
+.footer ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+.footer__base { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--ink-2); }
+
+/* ---------- phone ---------- */
+@media (max-width: 900px) {
+  .hero__box { grid-template-columns: 1fr; }
+  .hero__photo { aspect-ratio: 4 / 3; }
+  .hero__panel { padding: 36px 28px; }
+  .hero__panel h1 { font-size: 32px; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }
+  .section .grid + .grid { margin-top: 28px; }
+  .footer__cols { grid-template-columns: 1fr; }
+  .section h2 { font-size: 28px; }
+}
+@media (max-width: 760px) {
+  .bar__inner { height: 64px; gap: 16px; }
+  .nav { display: none; }
+  .menu-btn { display: inline-flex; margin-right: auto; }
+  .logo { font-size: 22px; order: 1; }
+  .logo svg { width: 26px; height: 26px; }
+  .icons { order: 2; margin-left: auto; }
+  .menu-btn { order: 0; margin-right: 0; }
+  .hero { padding-top: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar__inner">
+    <button class="menu-btn" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a class="logo" href="#">
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <g transform="rotate(-45 20 20)">
+          <path d="M7 8.5A1.5 1.5 0 0 1 8.5 7h20l4.5 4.5v20a1.5 1.5 0 0 1-1.5 1.5h-23A1.5 1.5 0 0 1 7 31.5z" fill="#fff"/>
+          <rect x="12.5" y="9" width="12" height="7" fill="#000"/>
+          <rect x="19.5" y="10.5" width="3" height="4" fill="#fff"/>
+          <circle cx="20" cy="24" r="5" fill="#000"/>
+          <circle cx="20" cy="24" r="2" fill="#fff"/>
+        </g>
+      </svg>
+      ArcaneByte
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#" aria-current="page">Catalog</a>
+      <a href="#">Where to buy</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="icons">
+      <a href="#" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg></a>
+      <a href="#" aria-label="Cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.6a1 1 0 0 0 1-.8L21 8H6.2"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17.5" cy="20" r="1.2"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div class="hero__box">
+      <div class="hero__photo">
+        <img src="../../../sites/arcanebyte/assets/img/products/adb2lisa/adb2lisa4.jpg" alt="adb2lisa adapters in red and white on black leatherette" width="2947" height="1500">
+      </div>
+      <div class="hero__panel">
+        <h1>Goodies for machines nobody supports.</h1>
+        <p>Hand-built adapters, modems, and drive emulators for the Apple Lisa, Macintosh XL, and Apple ///.</p>
+        <a class="btn btn--white" href="#lisa">See the products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="lisa">
+    <h2>For the Apple Lisa</h2>
+    <p class="section__note">Also the Macintosh XL. The hard drive emulator fits the Apple /// too.</p>
+    <ul class="grid">
+      <li class="item"><a href="#">
+        <div class="item__media"><img src="../../../sites/arcanebyte/assets/img/products/adb2lisa/adb2lisa4.jpg" alt=""></div>
+        <p class="item__name">adb2lisa</p>
+        <p class="item__sub">Fits Apple Lisa, Macintosh XL</p>
+      </a></li>
+      <li class="item"><a href="#">
+        <div class="item__media"><img src="../../../sites/arcanebyte/assets/img/products/mac2lisa/mac2lisa4.jpg" alt=""></div>
+        <p class="item__name">mac2lisa</p>
+        <p class="item__sub">Fits Apple Lisa, Macintosh XL</p>
+      </a></li>
+      <li class="item"><a href="#">
+        <div class="item__media"><img src="../../../sites/arcanebyte/assets/img/products/usb2lisa/usb2lisa1.jpg" alt=""></div>
+        <p class="item__name">usb2lisa</p>
+        <p class="item__sub">Fits Apple Lisa, Macintosh XL · Email to order</p>
+      </a></li>
+      <li class="item"><a href="#">
+        <div class="item__media"><img src="../../../sites/arcanebyte/assets/img/products/harddrive/harddrive1.jpg" alt=""></div>
+        <p class="item__name">Apple Parallel Hard Drive Emulator</p>
+        <p class="item__sub">Fits Apple Lisa, Apple /// · Email to order</p>
+      </a></li>
+    </ul>
+    <ul class="grid">
+      <li class="item"><a href="#">
+        <div class="item__media item__media--tile"><img src="../../../sites/arcanebyte/assets/img/products/lisaboost/label.png" alt=""></div>
+        <p class="item__name">LisaBoost</p>
+        <p class="item__sub">In development</p>
+      </a></li>
+      <li class="item"><a href="#">
+        <div class="item__media item__media--tile"><img src="../../../sites/arcanebyte/assets/img/products/apple2e/label.png" alt=""></div>
+        <p class="item__name">Apple IIe Card</p>
+        <p class="item__sub">In development</p>
+      </a></li>
+      <li class="item"><a href="#">
+        <div class="item__media item__media--tile"><img src="../../../sites/arcanebyte/assets/img/products/lisacolor/label.png" alt=""></div>
+        <p class="item__name">LisaColor</p>
+        <p class="item__sub">In development</p>
+      </a></li>
+      <li class="item"><a href="#">
+        <div class="item__media item__media--tile"><img src="../../../sites/arcanebyte/assets/img/products/lisalink/label.png" alt=""></div>
+        <p class="item__name">LisaLink</p>
+        <p class="item__sub">In development</p>
+      </a></li>
+    </ul>
+  </section>
+
+  <section class="wrap section" id="rs232">
+    <h2>For anything with an RS232 serial port</h2>
+    <ul class="grid">
+      <li class="item"><a href="#">
+        <div class="item__media"><img src="../../../sites/arcanebyte/assets/img/products/wifimodem/wifimodem1.jpg" alt=""></div>
+        <p class="item__name">WiFiModem</p>
+        <p class="item__sub">Fits any machine with an RS232 serial port</p>
+      </a></li>
+      <li class="item"><a href="#">
+        <div class="item__media"><img src="../../../sites/arcanebyte/assets/img/products/wifimodem/wifimodem3.jpg" alt=""></div>
+        <p class="item__name">WiFiModem32</p>
+        <p class="item__sub">Fits any machine with an RS232 serial port</p>
+      </a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div>
+        <h3>ArcaneByte</h3>
+        <p>30-day returns and a 30-day warranty · <a href="mailto:support@arcanebyte.com">support@arcanebyte.com</a></p>
+      </div>
+      <div>
+        <h3>Help and policies</h3>
+        <ul>
+          <li><a href="#">Where to buy</a></li>
+          <li><a href="#">Returns &amp; warranty</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="https://www.ebay.com/sch/arcanebyte/">eBay</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="https://www.tindie.com/stores/arcanebyte/">Tindie</a></li>
+          <li><a href="https://github.com/arcanebyte">GitHub</a></li>
+          <li><a href="https://www.etsy.com/shop/ArcaneByte">Etsy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">© 2026, ArcaneByte</div>
+  </div>
+</footer>
+
+</body>
+</html>

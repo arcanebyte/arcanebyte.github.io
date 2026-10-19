@@ -1,0 +1,7 @@
+{{- /* PayPal NCP cart. Loaded blocking in <head> and site-wide, because the cart
+       persists across pages and each product page calls cartPaypal.AddToCart()
+       inline in the body — that call needs cartPaypal to already exist.
+       Merchant ID is in hugo.toml; per-product button IDs are in front matter. */ -}}
+{{- with .Site.Params.paypal }}
+  <script src="{{ .cartJS }}" data-merchant-id="{{ .merchantID }}"></script>
+{{- end }}

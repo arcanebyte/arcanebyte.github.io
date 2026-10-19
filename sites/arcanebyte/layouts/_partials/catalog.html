@@ -1,0 +1,27 @@
+{{- /* Every product group in the order params.catalog lists them. Takes the
+       site. Inside a group, products for sale come first; anything carrying a
+       `status` (designed but not built) follows in its own row. */ -}}
+{{- $site := . }}
+{{- $kits := (where $site.RegularPages "Section" "products").ByWeight }}
+
+<div id="products">
+  {{- range $site.Params.catalog }}
+    {{- $group := . }}
+    {{- with where $kits "Params.group" $group.name }}
+  <section class="wrap group" id="{{ urlize $group.name }}" aria-labelledby="{{ urlize $group.name }}-title">
+    <h2 id="{{ urlize $group.name }}-title">{{ $group.name }}</h2>
+    {{- with $group.note }}<p class="group__note">{{ . }}</p>{{ end }}
+    {{- with where . "Params.status" nil }}
+    <ul class="grid">
+      {{- range . }}{{ partial "kit.html" . }}{{ end }}
+    </ul>
+    {{- end }}
+    {{- with where . "Params.status" "!=" nil }}
+    <ul class="grid">
+      {{- range . }}{{ partial "kit.html" . }}{{ end }}
+    </ul>
+    {{- end }}
+  </section>
+    {{- end }}
+  {{- end }}
+</div>

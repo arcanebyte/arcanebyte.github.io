@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><title>The Annotated Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--g:#e6e3dc;--ink:#1a1a1a;--red:#c8102e;--mute:#8c8982}
+*{box-sizing:border-box}body{margin:0;background:var(--g);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:19px;line-height:1.45;width:1440px;height:900px;overflow:hidden}
+.nav{display:flex;justify-content:space-between;align-items:baseline;padding:34px 72px 0;font-size:19px}
+.nav b{font-weight:600;font-size:26px}.nav span{margin-left:34px}
+.hero{display:grid;grid-template-columns:470px 1fr;gap:56px;padding:44px 72px 0;align-items:start}
+h1{font-size:62px;line-height:1.02;font-weight:600;margin:0 0 26px;letter-spacing:-.01em}
+.lede{font-size:21px;margin:0 0 22px}.copy{font-size:17px;color:#3a3a3a;margin:0 0 30px;max-width:44ch}
+.buy{display:inline-block;background:var(--red);color:#fff;padding:16px 26px;font-size:19px;font-weight:600;text-decoration:none}
+.also{display:block;margin-top:14px;font-size:16px;color:var(--mute)}
+.fig{position:relative}
+.fig img{width:842px;height:632px;object-fit:cover;display:block}
+.fig svg{position:absolute;inset:0;width:842px;height:632px}
+.n{position:absolute;width:30px;height:30px;border-radius:50%;background:var(--g);color:var(--ink);border:1.5px solid var(--ink);display:grid;place-items:center;font-size:15px;font-weight:600}
+.key{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 28px;margin-top:16px;font-size:15.5px;width:842px}
+.key div b{font-weight:600;margin-right:8px}
+.cap{position:absolute;left:0;bottom:-30px;font-size:14px;color:var(--mute);font-style:italic}
+</style></head><body>
+<div class="nav"><b>ArcaneByte</b><div><span>Catalog</span><span>Where to buy</span><span>FAQ</span><span>Contact</span></div></div>
+<div class="hero">
+ <div>
+  <h1>Goodies for machines nobody supports.</h1>
+  <p class="lede">Hand-built adapters, modems, and drive emulators for the Apple Lisa, Macintosh XL, and Apple ///.</p>
+  <p class="copy">Shown here, the adb2lisa: it lets an Apple Desktop Bus keyboard behave like an original Lisa keyboard, with no external power and no changes to the machine. Every board is assembled and tested in San Antonio before it ships.</p>
+  <a class="buy" href="#">Order the adb2lisa</a>
+  <span class="also">Also sold on eBay, Tindie, and Etsy.</span>
+ </div>
+ <div class="fig">
+  <img src="file:///Users/jdenton/github/arcanebyte.github.io/sites/arcanebyte/assets/img/products/adb2lisa/adb2lisa1.jpg" alt="">
+  <svg viewBox="0 0 842 632" fill="none" stroke="#1a1a1a" stroke-width="1.5">
+   <path d="M242 52 L150 40"/><path d="M402 165 L402 90"/><path d="M700 62 L770 40"/><path d="M392 372 L150 440"/><path d="M242 535 L150 600"/><path d="M602 410 L790 560"/>
+  </svg>
+  <span class="n" style="left:120px;top:25px">1</span><span class="n" style="left:387px;top:62px">2</span><span class="n" style="left:770px;top:25px">3</span><span class="n" style="left:120px;top:426px">4</span><span class="n" style="left:120px;top:586px">5</span><span class="n" style="left:776px;top:546px">6</span>
+  <div class="key">
+   <div><b>1</b>Crystal, 16 MHz</div><div><b>2</b>ATmega microcontroller</div><div><b>3</b>Power LED and reset</div>
+   <div><b>4</b>Keyboard-layout jumpers (US, UK, DE, FR)</div><div><b>5</b>ADB keyboard port</div><div><b>6</b>Lisa keyboard jack, ¼-inch</div>
+  </div>
+ </div>
+</div>
+</body></html>

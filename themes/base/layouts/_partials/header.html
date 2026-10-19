@@ -1,0 +1,42 @@
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+    </button>
+
+    <a class="brand" href="{{ "/" | relURL }}">
+      {{- /* The floppy mark from the ArcaneByte logo, redrawn so it stays crisp on the bar. */}}
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <g transform="rotate(-45 20 20)">
+          <path d="M7 8.5A1.5 1.5 0 0 1 8.5 7h20l4.5 4.5v20a1.5 1.5 0 0 1-1.5 1.5h-23A1.5 1.5 0 0 1 7 31.5z" fill="#fff"/>
+          <rect x="12.5" y="9" width="12" height="7" fill="#000"/>
+          <rect x="19.5" y="10.5" width="3" height="4" fill="#fff"/>
+          <circle cx="20" cy="24" r="5" fill="#000"/>
+          <circle cx="20" cy="24" r="2" fill="#fff"/>
+        </g>
+      </svg>
+      {{- with .Site.Params.brand }}<span>{{ .lead }}{{ .trail }}</span>{{ else }}<span>{{ $.Site.Title }}</span>{{ end -}}
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      {{- range .Site.Menus.main }}
+        {{- /* The home page is the catalog, so its menu entry is current there too. */}}
+        {{- $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) (and $.IsHome (eq .PageRef "/products")) }}
+        <a href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+    </nav>
+  </div>
+</header>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function () {
+      var open = nav.hasAttribute('data-open');
+      if (open) { nav.removeAttribute('data-open'); } else { nav.setAttribute('data-open', ''); }
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>

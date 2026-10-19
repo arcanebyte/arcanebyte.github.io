@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="wrap wrap--narrow page-head">
+  <h1>{{ .Title }}</h1>
+  {{- with .Params.lede }}<p class="page-head__lede">{{ . }}</p>{{ end }}
+</div>
+<div class="wrap band">
+  {{- with .Content }}<div class="prose" style="margin-bottom:2rem">{{ . }}</div>{{ end }}
+  <ul class="stores">
+    {{- range .Site.Params.stores }}
+    <li>
+      <a class="store" href="{{ .url }}" rel="noopener">
+        <img src="{{ printf "/img/icons/%s.svg" .icon | relURL }}" alt="" width="26" height="26">
+        <span><strong>{{ .name }}</strong><span>Our {{ .name }} store</span></span>
+      </a>
+    </li>
+    {{- end }}
+    <li>
+      <a class="store" href="{{ "/contact/" | relURL }}">
+        <span><strong>Direct</strong><span>Email us for an invoice</span></span>
+      </a>
+    </li>
+  </ul>
+</div>
+{{ end }}

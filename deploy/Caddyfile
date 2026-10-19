@@ -1,0 +1,16 @@
+# TLS in front of nginx. Caddy fetches Let's Encrypt certificates for both
+# hostnames on first start and renews them on its own; it needs ports 80 and
+# 443 reachable and the DNS records pointed at this server. The `sites`
+# name is the nginx service in docker-compose.yml.
+
+{
+	email support@arcanebyte.com
+}
+
+www.arcanebyte.com {
+	reverse_proxy sites:80
+}
+
+arcanebyte.com {
+	redir https://www.arcanebyte.com{uri} permanent
+}
