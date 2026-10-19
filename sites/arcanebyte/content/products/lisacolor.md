@@ -14,7 +14,7 @@ specs:
   - "16 colors from Apple's standard palette"
   - "Color in programs that draw with classic QuickDraw, plus color icons, PICTs, and patterns"
   - "DVI output through an HDMI socket"
-  - "The Office System and Xenix still show, mirrored in black and white"
+  - "The Office System and Xenix still supported, mirrored in black and white"
   - "Works alongside LisaBoost"
 ---
 
@@ -24,10 +24,9 @@ display.
 
 Under MacWorks, the desktop runs at 640×480 with square pixels, in color. Programs that
 draw with classic QuickDraw show in color. Programs that use direct color show in black
-and white. Everything else on the Lisa, like the Office System and Xenix, appears as the
+and white. Everything else on the Lisa, like the Office System and Xenix, appears on the
 Lisa's own screen.
 
 ## Status
 
-The Rev A board is laid out and nothing has been built yet. The firmware has only run in
-the LisaEm emulator. There's no price yet.
+The Rev A board is in development and nothing has been built yet. Stay tuned!

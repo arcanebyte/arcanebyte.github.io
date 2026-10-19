@@ -26,5 +26,4 @@ handles https on the card.
 
 ## Status
 
-The Rev A board is drawn and nothing has been built yet. The Office System software has
-only run in the LisaEm emulator. There's no price yet.
+The Rev A board is in development and nothing has been built yet. Stay tuned!

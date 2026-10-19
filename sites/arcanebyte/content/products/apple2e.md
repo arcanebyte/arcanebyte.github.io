@@ -28,6 +28,4 @@ port A, an 80-column card, and a ThunderClock-compatible clock.
 
 ## Status
 
-PCBs have been ordered and the card has not been built yet. ProDOS and AppleWorks 3.0 run
-in the LisaEm emulator. Color, double lo-res, a mouse card, and paddles aren't done yet.
-There's no price yet.
+Rev A cards are currently being tested. Stay tuned!
